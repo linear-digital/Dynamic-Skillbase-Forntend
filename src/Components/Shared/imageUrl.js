@@ -1,3 +1,3 @@
 export const imageUrl = (image) => {
-  return `https://server.lifechangebd.com/${image}`;
+  return `http://localhost:4000/${image}`;
 };
