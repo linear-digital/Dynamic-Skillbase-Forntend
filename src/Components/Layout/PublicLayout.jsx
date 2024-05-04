@@ -11,7 +11,7 @@ const PublicLayout = () => {
 
 
     return (
-        <div className="bg-white min-h-screen text-black pt-5">
+        <div className="bg-white min-h-screen text-black">
             <TopNavbar />
             <Toaster />
             <div className="min-h-[50vh]">

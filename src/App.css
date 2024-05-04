@@ -3,6 +3,11 @@
   overflow: hidden;
 }
 
+.hero-bg {
+  background: rgb(250, 209, 203);
+  background: linear-gradient(357deg, rgba(250, 209, 203, 1) 0%, rgba(220, 242, 229, 1) 100%);
+}
+
 .profile-pic .overlay {
   position: absolute;
   top: 0;
@@ -57,13 +62,13 @@
 
 
 ::-webkit-scrollbar {
-  background: rgb(63,94,251);
+  background: rgb(63, 94, 251);
   background: radial-gradient(circle, rgb(123, 143, 240) 0%, rgb(241, 102, 130) 100%);
 }
 
 /* Change scrollbar thumb (the draggable scrolling handle) */
 ::-webkit-scrollbar-thumb {
-  background: rgb(63,94,251);
+  background: rgb(63, 94, 251);
   background: radial-gradient(circle, rgb(123, 143, 240) 0%, rgb(241, 102, 130) 100%);
 }
 

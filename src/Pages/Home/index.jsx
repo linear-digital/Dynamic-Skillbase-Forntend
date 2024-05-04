@@ -10,7 +10,7 @@ import Statistic from "./Statistic";
 const Home = () => {
     return (
         <div>
-           
+           <HeroArea />
         </div>
     );
 };
