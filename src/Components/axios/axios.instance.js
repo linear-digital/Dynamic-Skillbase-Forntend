@@ -1,0 +1,20 @@
+import Cookies from "js-cookie";
+import axios from "axios";
+export const baseUrl = "https://server.lifechangebd.com/api/";
+// export const baseUrl = "http://localhost:4000/api/";
+export const api = axios.create({
+  baseURL: baseUrl,
+  headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "x-access-token": Cookies.get("accessToken"),
+  },
+});
+
+export const apiUpload = axios.create({
+  baseURL: baseUrl,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "x-access-token": Cookies.get("accessToken"),
+  },
+});
