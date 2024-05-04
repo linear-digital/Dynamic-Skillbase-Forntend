@@ -7,10 +7,10 @@ const HeroArea = () => {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     return (
-        <div className='min-h-[90vh] flex items-center bg-cover bg-center bg-no-repeat p-4 lg:p-4 hero-bg'
+        <div className='min-h-[90vh] flex items-center  p-4 lg:p-4 hero-bg'
 
         >
-            <div className="text-white lg:grid grid-cols-12 mt-20 container mx-auto">
+            <div className="text-white lg:grid grid-cols-12 lg:mt-20 mt-24 container mx-auto">
                 <div className='col-span-7'>
                     <h3 className='text-2xl uppercase text-primary font-semibold'>
                         Education Solution
