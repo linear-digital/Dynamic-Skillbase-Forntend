@@ -5,7 +5,7 @@
 
 .hero-bg {
   background: rgb(250, 209, 203);
-  background: linear-gradient(357deg, rgba(250, 209, 203, 1) 0%, rgba(220, 242, 229, 1) 100%);
+  background: linear-gradient(360deg, rgba(250, 209, 203, 1) 0%, rgba(220, 242, 229, 1) 100%);
 }
 
 .profile-pic .overlay {
@@ -46,11 +46,8 @@
 }
 
 .gradint-bg-2 {
-  background: rgb(213, 254, 255);
-  background: -moz-linear-gradient(0deg, rgba(213, 254, 255, 1) 0%, rgba(251, 239, 215, 1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(213, 254, 255, 1) 0%, rgba(251, 239, 215, 1) 100%);
-  background: linear-gradient(0deg, rgba(213, 254, 255, 1) 0%, rgba(251, 239, 215, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d5feff", endColorstr="#fbefd7", GradientType=1);
+  background: rgb(250, 209, 203);
+  background: linear-gradient(360deg, rgba(250, 209, 203, 1) 0%, rgba(220, 242, 229, 1) 100%);
 }
 
 .gradint-bg-light {

@@ -1,11 +1,7 @@
 import React from 'react';
-import Logo from '../../Components/Brand/Logo';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Lady from './hero-image.png'
 const HeroArea = () => {
-    const { user } = useSelector((state) => state.user);
-    const dispatch = useDispatch();
     return (
         <div className='min-h-[90vh] flex items-center  p-4 lg:p-4 hero-bg'
 
