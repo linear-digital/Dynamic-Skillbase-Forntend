@@ -3,6 +3,7 @@ import CourseCard from '../../Components/Card/CourseCard';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../Components/Shared/Loader';
 import { api } from '../../Components/axios/axios.instance';
+import { Link } from 'react-router-dom';
 
 const PopularCourses = () => {
     const { data: courses, isLoading, refetch } = useQuery({
@@ -26,6 +27,11 @@ const PopularCourses = () => {
                 {
                     courses?.filter(course => course?._id !== "66092db02726bc7bb3f9588c")?.map(course => <CourseCard key={course._id} course={course} refetch={refetch} />)
                 }
+            </div>
+            <div className='flex justify-center items-center  mt-10'>
+                <Link to={'/courses'} className='btn btn-primary'>
+                    View All Courses
+                </Link>
             </div>
         </div>
     );

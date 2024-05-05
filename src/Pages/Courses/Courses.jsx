@@ -24,6 +24,7 @@ const Courses = () => {
                     courses?.filter(course => course?._id !== "66092db02726bc7bb3f9588c")?.map(course => <CourseCard key={course._id} course={course} refetch={refetch} />)
                 }
             </div>
+            
         </div>
     );
 };
