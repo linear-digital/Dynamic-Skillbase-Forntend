@@ -27,8 +27,8 @@ module.exports = withMT({
     themes: [
       {
         mytheme: {
-          primary: "#49d081",
-          secondary: "#9849cc",
+          primary: "#2C3D95",
+          secondary: "#E00A11",
           accent: "#981CEB",
           info: "#3abff8",
           success: "#36d399",

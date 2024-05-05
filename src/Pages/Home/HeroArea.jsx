@@ -17,10 +17,10 @@ const HeroArea = () => {
                         Better Learning Feature Starts With Dynamic Skillbase
                     </h1>
                     <p className="lg:py-6 py-4 lg:w-[80%] w-full text-xs lg:text-sm leading-normal text-blue-gray-700">
-                        It's a Bangladeshi trusted online platform. It is a learning and earning process by using your valuable free time at home through your smart phone only It is a very easy process and you can learn this process on your own mother tongue and you can earn from our community with selling some Courses Services or product also. Here you make your career smoothly.
+                    At its core, Dynamic Skillbase harnesses the power of adaptive learning technology to tailor educational experiences to each individual user. Whether you're a student, a professional seeking to upskill, or an entrepreneur looking to expand your knowledge base, Dynamic Skillbase is your personalized pathway to success.
                     </p>
                     <div className="flex gap-5">
-                        <Link to={'/signup'} className="btn btn-primary px-6">
+                        <Link to={'/courses'} className="btn btn-primary px-6">
                             Explore Courses
                         </Link>
                     </div>

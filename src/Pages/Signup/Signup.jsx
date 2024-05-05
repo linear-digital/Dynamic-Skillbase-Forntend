@@ -78,7 +78,11 @@ const Signup = () => {
     }, [referCode])
     return (
         <div>
-            <div className="min-h-[70vh] bg-gray-100 py-6 flex flex-col justify-center sm:py-12 text-black">
+            <div className="min-h-[100vh] bg-gray-100 py-6 flex flex-col justify-center sm:py-12 text-black bg-cover bg-center"
+            style={{
+                backgroundImage: `url(/images/bg/auth-bg.jpg)`
+            }}
+            >
                 <BlankDialog open={open} setOpen={setOpen} size={"sm"}>
                     <div className='py-5 text-black px-5'>
                         <h1 className='text-2xl font-semibold text-green-600 text-center'>Welcome to lifechangebd</h1>

@@ -72,14 +72,14 @@ function NavList() {
                         <div className="flex gap-4">
                             <Link to={'/login'}>
                                 <Button color="green" variant="filled"
-                                    className="bg-[#49d081]"
+                                    className="bg-primary"
                                 >
                                     Login
                                 </Button>
                             </Link>
                             <Link to={'/signup'}>
                                 <Button color="green" variant="filled"
-                                    className="bg-[#49d081]"
+                                    className="bg-primary"
                                 >
                                     Try For Free
                                 </Button>

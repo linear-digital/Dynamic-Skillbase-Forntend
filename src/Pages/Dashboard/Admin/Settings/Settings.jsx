@@ -45,7 +45,7 @@ const Settings = () => {
                         />
                         <InputFeild
                             type={"number"}
-                            name={"due"}
+                            name={"pending_fee"}
                             value={setting?.due}
                             label={"Due"}
                         />
@@ -63,15 +63,15 @@ const Settings = () => {
                         />
                         <InputFeild
                             type={"number"}
-                            name={"counsultant_bonus"}
+                            name={"counselor_bonus"}
                             value={setting?.counsultant_bonus}
-                            label={"Bonus for Consultant"}
+                            label={"Bonus for counselor"}
                         />
                         <InputFeild
                             type={"number"}
-                            name={"gl_bonus"}
+                            name={"team_leader_bonus"}
                             value={setting?.gl_bonus}
-                            label={"Bonus for Group Leader"}
+                            label={"Bonus for Team Leader"}
                         />
                         <InputFeild
                             type={"number"}

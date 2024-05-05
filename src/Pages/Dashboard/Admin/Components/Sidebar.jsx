@@ -54,9 +54,11 @@ export function Sidebar({ setShow }) {
         return <Loader />
     }
     return (
-        <Card className="h-[100vh] w-full max-w-[20rem] min-w-[16rem] p-4 shadow-xl shadow-blue-gray-900/5 overflow-y-auto pb-5 gradint-bg-2">
-            <div className="mb-2 flex items-center gap-4 p-4 justify-center">
-                <Logo link={"/user"} />
+        <Card className="h-[100vh] w-full max-w-[20rem] min-w-[16rem] p-4 shadow-xl shadow-blue-gray-900/5 overflow-y-auto pb-5 bg-black text-white">
+            <div className=" flex items-center gap-4 p-4 justify-center">
+                <div className="bg-white p-2 rounded-full w-[130px] h-[130px]">
+                    <Logo link={"/user"} />
+                </div>
             </div>
             <div className='w-[100px] h-[100px] min-h-[100px] rounded-full overflow-hidden border mx-auto profile-pic border-primary'
                 style={{
@@ -85,186 +87,164 @@ export function Sidebar({ setShow }) {
                 {user.firstName + " " + user.lastName}
             </h1>
             <h2 className='mt-2 text-sm font-semibold text-center'>Role : {getRolename(user?.role)}</h2><h2 className='mt-2 text-sm text-center'>Balance : {user?.balance}</h2>
-            <div className='w-full flex flex-col gap-y-1 mt-10'>
-                <Accordion
-                    open={active === 1}
-                    icon={
-                        <ChevronDownIcon
-                            strokeWidth={2.5}
-                            className={`mx-auto h-4 w-4 transition-transform ${active === 1 ? "rotate-180" : ""}`}
-                        />
+            <div className='w-full flex flex-col gap-y-1 mt-10 '>
+                <List className="p-0 text-white">
+                    {
+                        user?.role === "admin" &&
+                        adminLinks.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
                     }
-                >
-                    <ListItem className="p-0" selected={active === 1}>
-                        <AccordionHeader onClick={() => setActive(active === 1 ? 0 : 1)} className="border-b-0 p-3">
-                            <ListItemPrefix>
-                                <UserGroupIcon className="h-5 w-5" />
-                            </ListItemPrefix>
-                            <Typography color="blue-gray" className="mr-auto font-normal">
-                                Dashboard
-                            </Typography>
-                        </AccordionHeader>
-                    </ListItem>
-                    <AccordionBody className="py-1">
-                        <List className="p-0">
-                            {
-                                user?.role === "admin" &&
-                                adminLinks.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }
-                            {
-                                user?.role === "sc" &&
-                                scLinks.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }
-                            {
-                                user?.role === "consultant" &&
-                                consultantLinks.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            } {
-                                user?.role === "gl" &&
-                                glLinks.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }{
-                                user?.role === "sgl" &&
-                                sglLinks.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }
-                            {
-                                user?.role === "teacher" &&
-                                course.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }
-                            {
-                                user?.role === "checker" &&
-                                checker.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            } {
-                                user?.role === "cm" &&
-                                cm.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }{
-                                user?.role === "trainer" &&
-                                trainer.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }{
-                                user?.role === "manager" &&
-                                manager.map((link, index) => (
-                                    <ListItem key={index} onClick={() => {
-                                        if (deviceType === "mobile") {
-                                            setShow(false);
-                                        }
-                                        navigate(link.path)
-                                    }}>
-                                        <ListItemPrefix>
-                                            <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                        </ListItemPrefix>
-                                        {link.name}
-                                    </ListItem>
-                                ))
-                            }
-                        </List>
-                    </AccordionBody>
-                </Accordion>
+                    {
+                        user?.role === "sc" &&
+                        scLinks.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }
+                    {
+                        user?.role === "consultant" &&
+                        consultantLinks.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    } {
+                        user?.role === "gl" &&
+                        glLinks.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }{
+                        user?.role === "sgl" &&
+                        sglLinks.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }
+                    {
+                        user?.role === "teacher" &&
+                        course.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }
+                    {
+                        user?.role === "checker" &&
+                        checker.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    } {
+                        user?.role === "cm" &&
+                        cm.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }{
+                        user?.role === "trainer" &&
+                        trainer.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }{
+                        user?.role === "manager" &&
+                        manager.map((link, index) => (
+                            <ListItem key={index} onClick={() => {
+                                if (deviceType === "mobile") {
+                                    setShow(false);
+                                }
+                                navigate(link.path)
+                            }}>
+                                <ListItemPrefix>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                {link.name}
+                            </ListItem>
+                        ))
+                    }
+                </List>
                 {
                     links.map((link, index) => (
                         <NavLink onClick={() => {
@@ -272,7 +252,7 @@ export function Sidebar({ setShow }) {
                                 setShow(false);
                             }
                         }} key={index}
-                            to={link.path} className={`w-full px-5 py-2 hover:bg-primary hover:text-white   ${path.pathname === link.path ? "bg-primary text-white font-normal" : ""}`}>
+                            to={link.path} className={`w-full px-5 py-2 hover:bg-primary hover:text-white text-white  ${path.pathname === link.path ? "bg-primary text-white font-normal" : ""}`}>
                             {link.name}
                         </NavLink>
                     ))
@@ -288,7 +268,7 @@ export function Sidebar({ setShow }) {
 
 const scLinks = [
     {
-        name: "Consultants",
+        name: "Counselor",
         path: "consultants"
     },
     {
@@ -327,7 +307,7 @@ const trainer = [
 ]
 const cm = [
     {
-        name: "Senior Consultants",
+        name: "Senior Counselor",
         path: "sc"
     },
     {
@@ -335,7 +315,7 @@ const cm = [
         path: "search"
     },
     {
-        name: "Consultants",
+        name: "Counselor",
         path: "consultants"
     },
 ]
@@ -359,7 +339,7 @@ const manager = [
 ]
 const sglLinks = [
     {
-        name: "Group Leaders",
+        name: "Team Leaders",
         path: "gl",
     },
     {
@@ -391,24 +371,28 @@ const consultantLinks = [
 
 const adminLinks = [
     {
+        name: "Users",
+        path: "users",
+    },
+    {
         name: "Search",
         path: "search"
     },
     {
-        name: "Senior Consultants",
+        name: "Senior Counselor",
         path: "sc"
     },
     {
-        name: "Consultants",
+        name: "Counselor",
         path: "consultants"
     },
 
     {
-        name: "Senior Group Leaders",
+        name: "Senior Team Leaders",
         path: "sgl"
     },
     {
-        name: "Group Leaders",
+        name: "Team Leaders",
         path: "gl"
     },
     {
@@ -425,10 +409,7 @@ const adminLinks = [
         name: "Trainer",
         path: "trainer"
     },
-    {
-        name: "User Management",
-        path: "users",
-    },
+
     {
         name: "Count",
         path: "count",
@@ -443,7 +424,7 @@ const adminLinks = [
     },
 
     {
-        name: "Settings",
+        name: "Site Management",
         path: "settings",
     },
 ]

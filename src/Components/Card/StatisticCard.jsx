@@ -9,16 +9,12 @@ const StatisticCard = ({ text, icon, text2, link }) => {
         }
     }
     return (
-        <div onClick={goTO} className='bg-black min-h-[130px] lg:w-[300px] w-full flex items-center justify-between px-7 rounded-md shadow shadow-gray-500 cursor-pointer'>
-            <div className="stat-figure text-primary">
-                <img
-                    className='h-[70px]'
-                    src={icon} alt="" />
-            </div>
-            <div className='flex flex-col items-center'>
-                <h1 className="text-white text-2xl">{text}</h1>
-                <h3 className="text-white text-2xl mt-1">{text2}</h3>
-            </div>
+        <div onClick={goTO} className='hero-bg rounded min-h-[130px] py-5 lg:w-[300px] w-full flex flex-col items-center justify-center px-7 cursor-pointer text-gray-800'>
+            <h1 className='text-xl font-semibold'>Best Education</h1>
+            <p className='text-sm text-center mt-1'>Lorem ipsum dolor sit amet  adipisicing elit.</p>
+            <button className='btn btn-primary mt-4 btn-sm'>
+                Explore Courses
+            </button>
         </div>
     );
 };

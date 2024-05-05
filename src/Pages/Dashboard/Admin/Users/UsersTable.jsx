@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 
 
 const UsersTable = ({ filters, setUsers, setStatistic }) => {
-    const [TABLE_HEAD, setTABLE_HEAD] = useState(["Date", "User id", "Name", "Phone", "Whatsapp", "Reference", "Consultant", "G L", "Status"]);
+    const [TABLE_HEAD, setTABLE_HEAD] = useState(["Date", "Active Date", "User id", "Name", "Phone", "Whatsapp", "Reference", "Consultant", "G L", "Status"]);
     const { user } = useSelector((state) => state.user);
     const [selectedUser, setSelectedUser] = useState(null);
     const [open, setOpen] = useState(false)
@@ -181,6 +181,22 @@ const UsersTable = ({ filters, setUsers, setStatistic }) => {
                                             >
                                                 {
                                                     moment(user.createdAt).format("DD/MM/YYYY hh:mm A")
+                                                }
+                                            </Typography>
+                                        </td>
+
+                                        <td className={classes}
+                                        >
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {
+                                                    user.settings?.activates ?
+                                                    moment(user.settings?.activates).format("DD/MM/YYYY hh:mm A")
+                                                    :
+                                                    "Not Activated"
                                                 }
                                             </Typography>
                                         </td>

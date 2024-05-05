@@ -27,7 +27,7 @@ const Dashboard = () => {
         return <Loader />
     }
     return (
-        <div className='h-screen gradint-bg lg:flex w-full text-black '>
+        <div className='h-screen bg-white lg:flex w-full text-black '>
             <div className="w-full lg:w-auto">
                 <div className="bg-white py-4 px-5 text-black lg:hidden">
                     <Bars3Icon className="w-9 h-9" onClick={() => setShow(!show)} />

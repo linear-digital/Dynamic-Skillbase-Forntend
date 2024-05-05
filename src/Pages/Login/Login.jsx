@@ -46,7 +46,11 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="min-h-[70vh] bg-gray-100 py-6 flex flex-col justify-center ">
+            <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center bg-center bg-cover "
+            style={{
+                backgroundImage: `url(/images/bg/auth-bg.jpg)`
+            }}
+            >
                 <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                     <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-7 lg:min-w-[550px]">
                         <div className="flex justify-center p-5">
@@ -79,7 +83,7 @@ const Login = () => {
                                                 <button onClick={handleSubmit} className="btn btn-primary btn-sm px-6 rounded-md py-2">Login</button>
                                             </div>
                                             <div className="relative">
-                                                <Link to={'/'}  className="btn btn-primary btn-sm px-6 rounded-md py-2">Back To Home</Link>
+                                                <Link to={'/'}  className="btn btn-secondary btn-sm px-6 rounded-md py-2">Back To Home</Link>
                                             </div>
                                         </div>
                                         <div className='mt-2'>
