@@ -53,7 +53,7 @@ export function UserSidebar({ setShow }) {
         return <Loader />
     }
     return (
-        <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] min-w-[16rem] p-4 shadow-xl shadow-blue-gray-900/5 mt-2 gradint-bg-2">
+        <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] min-w-[16rem] p-4 shadow-xl bg-black text-white">
             <div className="mb-2 flex items-center gap-4 p-4 justify-center">
                 <Logo link={"/user"} />
             </div>

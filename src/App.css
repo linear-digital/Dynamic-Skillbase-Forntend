@@ -43,11 +43,13 @@
   background: radial-gradient(circle,
       rgba(255, 241, 247, 1) 0%,
       rgba(223, 235, 249, 1) 100%); */
+      background: white;
 }
 
 .gradint-bg-2 {
   /* background: rgb(250, 209, 203);
   background: linear-gradient(360deg, rgba(250, 209, 203, 1) 0%, rgba(220, 242, 229, 1) 100%); */
+  background: white;
 }
 
 .gradint-bg-light {
@@ -55,6 +57,7 @@
   background: radial-gradient(circle,
       rgba(254, 254, 254, 1) 0%,
       rgba(251, 251, 251, 1) 100%); */
+      background: white;
 }
 
 

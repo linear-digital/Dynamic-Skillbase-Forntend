@@ -31,7 +31,7 @@ const User = () => {
         return <Loader />
     }
     return (
-        <main className='gradint-bg lg:flex w-full gap-5 text-black overflow-hidden'>
+        <main className='gradint-bg lg:flex w-full gap-5 text-black  overflow-hidden'>
             <div className="w-full lg:w-auto">
                 <div className="bg-white py-4 px-5 text-black lg:hidden">
                     <Bars3Icon className="w-9 h-9" onClick={() => setShow(!show)} />

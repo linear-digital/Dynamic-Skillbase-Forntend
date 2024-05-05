@@ -17,7 +17,7 @@ const Courses = () => {
         return <Loader />
     }
     return (
-        <div className='container mx-auto py-14 px-4'>
+        <div className='container mx-auto py-20 mt-14 px-4'>
             <h1 className='text-5xl text-center'>All Courses</h1>
             <div className="flex flex-wrap gap-7 mt-10 justify-center">
                 {

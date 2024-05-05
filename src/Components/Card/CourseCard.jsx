@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { api } from '../axios/axios.instance';
 import { BlankDialog } from '../Dialog/BlankDialog';
 import CourseForm from '../../Pages/Dashboard/Admin/Courses/_COMP/CourseForm';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '@material-tailwind/react';
 import { useSelector } from 'react-redux';
 import { refreshUser } from '../../redux/features/user/userSlice';
@@ -21,6 +21,7 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
         }
     }, [course, currentUser])
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const updateCourse = async (e) => {
         e.preventDefault();
         const meetingId = e.target.meetingId.value;
@@ -69,7 +70,7 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
 
     if (user === "admin") {
         return (
-            <div className="card rounded overflow-hidden lg:max-w-[380px] h-[380px] w-full bg-base-100 shadow-xl relative border">
+            <div className="card rounded overflow-hidden lg:max-w-[380px] h-[380px] w-full bg-base-100 shadow-xl relative border ">
                 <img
                     className='w-full h-[270px]'
                     src={imageUrl(course?.image)}
@@ -112,7 +113,7 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
     }
     else if (user === "user") {
         return (
-            <div className="card rounded overflow-hidden lg:max-w-[380px] h-[380px] w-full bg-base-100 shadow-xl relative border">
+            <div className="card rounded overflow-hidden lg:max-w-[380px] h-[380px] w-full bg-[#e1f3e8] shadow-xl relative border">
                 <img
                     className='w-full h-[270px]'
                     src={imageUrl(course?.image)}
@@ -141,13 +142,18 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
         );
     }
     return (
-        <div className="card rounded overflow-hidden lg:max-w-[380px] h-[380px] w-full bg-base-100 shadow-xl relative border">
+        <div className="card rounded overflow-hidden lg:max-w-[380px] h-[390px] w-full bg-[#e1f3e8] p-3 shadow-xl relative border justify-between">
+            <button className='btn btn-sm  btn-primary  absolute'>
+                ${course?.price}
+            </button>
             <img
-                className='w-full h-[270px]'
+                className='w-full max-h-[250px] min-h-[250px] bg-white rounded-lg'
                 src={imageUrl(course?.image)}
                 alt=""
             />
-            <div className='p-3 bg-white absolute bottom-0 w-full card-action'>
+            <div className='p-3 bg-white h-[100px] flex justify-center flex-col w-full card-action mt-3 cursor-pointer rounded hover:shadow-xl'
+            onClick={() => navigate(`/courses/${course?._id}`)}
+            >
                 <h1 className="text-2xl text-center text-gray-900 font-semibold">{course?.title}</h1>
                 <div className="flex items-center justify-between mt-2">
                     {
@@ -169,11 +175,12 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
                                 }
                             </>
                             :
-                            <Link to={`/courses/${course?._id}`} className='mx-auto'>
-                                <button className='btn btn-sm  btn-primary mx-auto block mt-2'>
-                                    View Details
-                                </button>
-                            </Link>
+                            // <Link to={`/courses/${course?._id}`} className='mx-auto'>
+                            //     <button className='btn btn-sm  btn-primary mx-auto block mt-2'>
+                            //         View Details
+                            //     </button>
+                            // </Link>
+                            null
                     }
                 </div>
             </div>
