@@ -26,9 +26,9 @@ function Contact() {
                 </Typography>
                 <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
                     <img
-                        src="/images/bg/help-center.jpg"
+                        src="/images/bg/image.png"
                         alt="map"
-                        className="w-full h-full rounded lg:max-h-[510px]"
+                        className="w-full h-full rounded lg:max-h-[510px] border"
                     />
                     <form
                         action="#"

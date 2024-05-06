@@ -23,6 +23,11 @@ const Statistic = ({ page }) => {
                         text2={"Access"}
                         icon={'/images/icons/time.png'}
                     />
+                    <StatisticCard
+                        text={"Life Time Access"}
+                        text2={"Access"}
+                        icon={'/images/icons/time.png'}
+                    />
                 </div>
             </div>
         </div>

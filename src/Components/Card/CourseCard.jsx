@@ -143,7 +143,9 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
     }
     return (
         <div className="card rounded overflow-hidden lg:max-w-[380px] h-[390px] w-full bg-[#e1f3e8] p-3 shadow-xl relative border justify-between">
-            <button className='btn btn-sm  btn-primary  absolute'>
+            <button
+                onClick={() => navigate(`/courses/${course?._id}`)}
+                className='btn btn-sm  btn-primary  absolute'>
                 ${course?.price}
             </button>
             <img
@@ -152,7 +154,7 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
                 alt=""
             />
             <div className='p-3 bg-white h-[100px] flex justify-center flex-col w-full card-action mt-3 cursor-pointer rounded hover:shadow-xl'
-            onClick={() => navigate(`/courses/${course?._id}`)}
+                onClick={() => navigate(`/courses/${course?._id}`)}
             >
                 <h1 className="text-2xl text-center text-gray-900 font-semibold">{course?.title}</h1>
                 <div className="flex items-center justify-between mt-2">

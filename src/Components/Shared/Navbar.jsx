@@ -41,16 +41,6 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium"
             >
-                <Link to={'/blog'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
-                    Blog
-                </Link>
-            </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-medium"
-            >
                 <Link to={'/contact'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
                     Contact
                 </Link>
@@ -110,7 +100,7 @@ export function TopNavbar() {
         <Navbar
             variant="filled"
             color="transparent"
-            className="fixed left-0 right-0 lg:top-5 top-0 z-10 h-max max-w-full rounded px-4 py-2 lg:px-8 lg:py-2 bg-white container mx-auto shadow-md">
+            className="fixed left-0 right-0 lg:top-3 top-0 z-10 h-max max-w-full rounded px-4 py-2 lg:px-8 lg:py-2 bg-white container mx-auto shadow-md">
             <div className="flex items-center justify-between text-black w-full bg-white">
                 <Typography
                     variant="h6"

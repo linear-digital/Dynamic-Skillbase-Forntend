@@ -125,7 +125,7 @@ const UserTableSCU = ({ filters, selected, setOpen, refetch, page }) => {
                                     key={page}
                                     variant="filled"
                                     size="sm"
-                                    className={page === Number(pageNumber) ? "bg-orange-500" : ""}
+                                    className={page === Number(pageNumber) ? "bg-primary" : ""}
                                     onClick={() => {
                                         paginate(page)
                                     }}
@@ -144,7 +144,7 @@ const UserTableSCU = ({ filters, selected, setOpen, refetch, page }) => {
                                     ...
                                 </IconButton>
                                 <IconButton
-                                    className={pagesList().length === Number(pageNumber) ? "bg-orange-500" : ""}
+                                    className={pagesList().length === Number(pageNumber) ? "bg-primary" : ""}
                                     variant="filled"
                                     size="sm"
                                     onClick={() => {
