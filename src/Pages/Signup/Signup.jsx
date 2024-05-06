@@ -86,17 +86,12 @@ const Signup = () => {
             >
                 <BlankDialog open={open} setOpen={setOpen} size={"sm"}>
                     <div className='py-5 text-black px-5'>
-                        <h1 className='text-2xl font-semibold text-green-600 text-center'>Welcome to lifechangebd</h1>
+                        <h1 className='text-2xl font-semibold text-green-600 text-center'>Welcome to Dynamic Skillbase</h1>
                         <h1 className='text-xl mt-3'>Your Account Information</h1>
                         <div className="mt-5">
                             <h2>Name: {user?.firstName + " " + user?.lastName}</h2>
                             <h2>Userid: {user?.userId}</h2>
-                            <h2>Email: {user?.email}</h2>
-                            <h2>Phone: {user?.phone}</h2>
                             <h2>Password: {values?.password}</h2>
-
-                            <h2>Whatsapp: {user?.whatsapp}</h2>
-                            <h2>Country: {user?.country}</h2>
                         </div>
                         <button
                             className='btn btn-primary btn-md mt-5'

@@ -28,7 +28,7 @@ const TermCondition = () => {
                     <br />👇👇👇👇👇
                     <br />
                     <h5 className='font-bold py-2'>
-                        Email: lifechangebd4@gmail.com
+                        Email: Dynamic Skillbase4@gmail.com
                     </h5>
                 </li>
                 <li>

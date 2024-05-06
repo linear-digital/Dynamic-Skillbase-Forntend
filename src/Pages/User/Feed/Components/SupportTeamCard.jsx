@@ -11,7 +11,7 @@ export function SupportTeamCard({ className, settings }) {
         <Card className={`${className} w-full border rounded`}>
             <CardBody>
                 <Typography variant="h5" color="blue-gray" className="mb-2 text-center">
-                    Life Change Support Team
+                    Dynamic Skillbase Support Team
                 </Typography>
             </CardBody>
             <CardFooter>
