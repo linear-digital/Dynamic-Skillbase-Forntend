@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
-    Card,
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
+    Card, List, ListItem, ListItemPrefix, Typography,
 } from "@material-tailwind/react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -9,6 +12,7 @@ import { logOutUser, refreshUser } from "../../../redux/features/user/userSlice"
 import { imageUrl } from "../../../Components/Shared/imageUrl";
 import { api, apiUpload } from "../../../Components/axios/axios.instance";
 import toast from "react-hot-toast";
+import { ChevronDownIcon, ChevronRightIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 
 export function UserSidebar({ setShow }) {
     const path = useLocation();
@@ -35,6 +39,7 @@ export function UserSidebar({ setShow }) {
             setInactiveUser(true)
         }
     }, [user])
+    const navigate = useNavigate();
     const updateProfile = async () => {
         try {
             const formData = new FormData();
@@ -49,6 +54,7 @@ export function UserSidebar({ setShow }) {
         }
     }
     const deviceType = window.innerWidth <= 768 ? "mobile" : "desktop";
+    const [open, setOpen] = useState(deviceType === "desktop" ? true : false);
     if (!user) {
         return <Loader />
     }
@@ -84,32 +90,77 @@ export function UserSidebar({ setShow }) {
                 {user.firstName + " " + user.lastName}
             </h1>
             <h2 className='mt-2 text-sm text-center'>Balance : {user.balance}</h2>
-            <div className='w-full flex flex-col gap-y-1 mt-10'>
-                {
-                    !inactiveUser ?
+            <Accordion
+                open={open}
 
-                        links.map((link, index) => (
-                            <Link onClick={() => {
-                                if (deviceType === "mobile") {
-                                    setShow(false)
+                icon={
+                    <ChevronDownIcon
 
-                                }
-                            }} key={index} to={link.path} className={`w-full px-5 py-2 hover:bg-primary hover:text-white   ${path.pathname === link.path ? "bg-primary text-white font-normal" : ""}`}>
-                                {link.name}
-                            </Link>
-                        ))
-                        :
-                        links2.map((link, index) => (
-                            <Link onClick={() => {
-                                if (deviceType === "mobile") {
-                                    setShow(false)
-
-                                }
-                            }} key={index} to={link.path} className={`w-full px-5 py-2 hover:bg-primary hover:text-white   ${path.pathname === link.path ? "bg-primary text-white font-normal" : ""}`}>
-                                {link.name}
-                            </Link>
-                        ))
+                        strokeWidth={2.5}
+                        className={`mx-auto text-white h-4 w-4 transition-transform ${open === 1 ? "rotate-180" : ""}`}
+                    />
                 }
+
+            >
+                <ListItem className="p-0 " 
+                    onClick={() => {
+                        if (deviceType === "mobile") {
+                            setShow(false);
+                        }
+                    }}
+                >
+                    <AccordionHeader className="border-b-0 p-3"
+                        onClick={() => setOpen(open === 1 ? 0 : 1)}
+                    >
+                        <ListItemPrefix>
+                            <UserGroupIcon className="h-5 w-5 text-white" />
+                        </ListItemPrefix>
+                        <Typography color="blue-gray" className="mr-auto font-normal text-white">
+                            Dashboard
+                        </Typography>
+                    </AccordionHeader>
+                </ListItem>
+                <AccordionBody className="py-1"
+                  
+                >
+                    <List className="p-0 text-white">
+                        {
+                             !inactiveUser ?
+
+                            links.map((link, index) => (
+                                <ListItem key={index} onClick={() => {
+                                    if (deviceType === "mobile") {
+                                        setShow(false);
+                                    }
+                                    navigate(link.path)
+                                }}>
+                                    <ListItemPrefix>
+                                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                    </ListItemPrefix>
+                                    {link.name}
+                                </ListItem>
+                            ))
+                            :
+                            links2.map((link, index) => (
+                                <ListItem key={index} onClick={() => {
+                                    if (deviceType === "mobile") {
+                                        setShow(false);
+                                    }
+                                    navigate(link.path)
+                                }}>
+                                    <ListItemPrefix>
+                                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                    </ListItemPrefix>
+                                    {link.name}
+                                </ListItem>
+                            ))
+                        }
+
+                    </List>
+                </AccordionBody>
+            </Accordion>
+            <div className='w-full flex flex-col gap-y-1 mt-10'>
+              
                 <button
                     onClick={() => dispatch(logOutUser())}
                     className='btn btn-error rounded-none text-white btn-sm mt-10'> Logout
