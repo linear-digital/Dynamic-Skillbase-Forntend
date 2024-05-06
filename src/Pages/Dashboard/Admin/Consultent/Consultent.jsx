@@ -17,7 +17,7 @@ const Consultant = () => {
     }, [location])
     return (
         <div className='p-5'>
-            <Header pageName={"Consultants"} setDates={setFilters} />
+            <Header pageName={"Counselor"} setDates={setFilters} />
             <TableSC filters={filters} />
         </div>
     );

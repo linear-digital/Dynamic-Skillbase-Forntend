@@ -13,7 +13,7 @@ const GroupLeaderPage = () => {
     }, [])
     return (
         <div className='p-5'>
-            <Header pageName={"Consultants"} setDates={setFilters} />
+            <Header pageName={"Counselor"} setDates={setFilters} />
             <Table filters={filters} pageName={"sc"} />
         </div>
     );

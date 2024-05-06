@@ -13,7 +13,7 @@ const SeniorCnnsultent = () => {
     },[])
     return (
         <div className='p-5'>
-            <Header pageName={"Senior Consultent"} setDates={setFilters} />
+            <Header pageName={"Senior Counselor"} setDates={setFilters} />
             <TableSC role={"sc"} filters={filters} />
         </div>
     );

@@ -38,7 +38,7 @@ const ConsultantOSC = ({ page }) => {
     }, [page, user])
     return (
         <div className='p-5'>
-            <Header pageName={page ? getRolename(page) : "Consultants"} setDates={setFilters} filters={filters} />
+            <Header pageName={page ? getRolename(page) : "Counselor"} setDates={setFilters} filters={filters} />
             <Table filters={filters} pageName={page ? page : "sc"} />
         </div>
     );
