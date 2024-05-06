@@ -41,6 +41,16 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium"
             >
+                <Link to={'/apply-for'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
+                   Sub Admins
+                </Link>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="p-1 font-medium"
+            >
                 <Link to={'/contact'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
                     Contact
                 </Link>

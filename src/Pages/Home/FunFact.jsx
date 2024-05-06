@@ -8,25 +8,25 @@ const FunFact = () => {
             <section className='w-full gap-3 lg:bg-[#edf1f9] mt-10 grid lg:grid-cols-4'>
                 <div className='flex flex-col items-center justify-center h-[150px] bg-[#edf1f9] lg:bg-transparent '>
                     <div>
-                        <h1 className='text-2xl font-semibold '>25+</h1>
+                        <h1 className='text-2xl font-semibold '>105k</h1>
                         <h1 className='text-2xl font-semibold mt-2'>Total Acquire</h1>
                     </div>
                 </div>
                 <div className='flex flex-col items-center justify-center h-[150px] bg-[#edf1f9] lg:bg-transparent '>
                     <div>
-                        <h1 className='text-2xl font-semibold '>235+</h1>
+                        <h1 className='text-2xl font-semibold '>235k</h1>
                         <h1 className='text-2xl font-semibold mt-2'>Total Student</h1>
                     </div>
                 </div>
                 <div className='flex flex-col items-center justify-center h-[150px] bg-[#edf1f9] lg:bg-transparent '>
                     <div>
-                        <h1 className='text-2xl font-semibold '>100+</h1>
+                        <h1 className='text-2xl font-semibold '>1000k</h1>
                         <h1 className='text-2xl font-semibold mt-2'>Total Instructor</h1>
                     </div>
                 </div>
                 <div className='flex flex-col items-center justify-center h-[150px] bg-[#edf1f9] lg:bg-transparent '>
                     <div>
-                        <h1 className='text-2xl font-semibold '>200+</h1>
+                        <h1 className='text-2xl font-semibold '>200k</h1>
                         <h1 className='text-2xl font-semibold mt-2'>Over The World</h1>
                     </div>
                 </div>

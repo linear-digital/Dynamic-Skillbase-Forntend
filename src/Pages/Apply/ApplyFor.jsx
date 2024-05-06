@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Input, Option, Select, Textarea, Typography } from "@material-tailwind/react";
 import toast from 'react-hot-toast';
-
+import imageRunning from './image.png'
 const ApplyFor = () => {
     const roles = [
         "Trainer",
@@ -33,14 +33,14 @@ const ApplyFor = () => {
     }
     console.log(selected)
     return (
-        <section className="px-8 py-8 lg:py-16 bg-white">
+        <section className="px-8 py-8 lg:py-16 lg:mt-20 bg-white">
             <div className="container mx-auto text-center">
                 <Typography
                     variant="h1"
                     color="blue-gray"
                     className="mb-4 !text-3xl lg:!text-5xl"
                 >
-                    Apply For Team
+                    Apply For Sub Admin
                 </Typography>
                 <Typography className="mb-10 font-normal !text-lg lg:mb-20 mx-auto lg:max-w-3xl !text-gray-500">
                     Whether it&apos;s a question about our services, a request for
@@ -49,7 +49,7 @@ const ApplyFor = () => {
                 </Typography>
                 <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-center">
                     <img
-                        src="/images/career.avif"
+                        src={imageRunning}
                         alt="map"
                         className="w-full h-full rounded lg:max-h-[510px]"
                     />
