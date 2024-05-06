@@ -1,4 +1,4 @@
-# Life change BD Client side with React
+# Dynamic Skillbase Client side with React
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

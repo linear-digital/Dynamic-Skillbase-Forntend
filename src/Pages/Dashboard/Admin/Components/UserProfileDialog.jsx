@@ -42,7 +42,7 @@ export const USER_ROLES = [
         value: "sgl",
     },
     {
-        label: "Group Leader",
+        label: "Team Leader",
         value: "gl",
     },
     {
@@ -54,11 +54,11 @@ export const USER_ROLES = [
         value: "checker",
     },
     {
-        label: "Consultant",
+        label: "Counselor",
         value: "consultant",
     },
     {
-        label: "Senior Consultant",
+        label: "Senior Counselor",
         value: "sc",
     }
 ]

@@ -6,7 +6,7 @@ const TermCondition = () => {
             <h1 className='text-center text-4xl'>TERMS AND CONDITIONS</h1>
             <ol className='list-decimal list-outside mt-7  mx-auto terms'>
                 <li>
-                    If anyone wants to apply for life change bd one should be informed that The lower age limit should be 18 years for both males or females as an online part-time working Student of the company. And those people who are under 18. They can still apply, but They're eligible only for learning and earning.
+                    If anyone wants to apply for Dynamic Skillbase one should be informed that The lower age limit should be 18 years for both males or females as an online part-time working Student of the company. And those people who are under 18. They can still apply, but They're eligible only for learning and earning.
                 </li>
                 <li>
                     One must train and work for the company for a period of six months working days before getting the certificate of online part-time work from our company
@@ -40,17 +40,17 @@ const TermCondition = () => {
             </ol>
             <hr />
             <h1 className='text-xl text-center mt-10'>
-                TERMS AND CONDITIONS FOR LIFE CHANGE BD MEET APP
+                TERMS AND CONDITIONS FOR Dynamic Skillbase MEET APP
             </h1>
             <ol className='list-decimal list-outside mt-7  mx-auto terms'>
                 <li>
-                    We use this app on life change bd in order to provide the services like Consultant meetings, live classes, training classes, Support meetings, etc.
+                    We use this app on Dynamic Skillbase in order to provide the services like Consultant meetings, live classes, training classes, Support meetings, etc.
                     As it is a meeting app so some media access is needed.. such as:- I) File access Ii)Camera access iii) Microphone access iv) Picture in Picture mode access
                     N.B:-This app doesn't collect any personal information and also doesn't share any information of anyone.
                 </li>
                 <li>
                     If someone misbehaves after joining this meeting, the company has the right to remove him/her from the meeting immediately and will delete their I'd. If any current Student of our company creates any problem during this meeting then his or I would be deactivated.
-                    People can use this app safe and securely. The moderator of this app is only the sub-admin's of the life change bd. Except sub-admin's nobody could access the moderator section.
+                    People can use this app safe and securely. The moderator of this app is only the sub-admin's of the Dynamic Skillbase. Except sub-admin's nobody could access the moderator section.
                 </li>
             </ol>
         </div>

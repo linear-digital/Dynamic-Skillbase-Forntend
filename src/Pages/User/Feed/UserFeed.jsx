@@ -31,7 +31,7 @@ const UserFeed = () => {
     }
     return (
         <div className='lg:p-10 p-5'>
-            <h1 className='text-3xl text-center font-semibold'>WELCOME TO LIFE CHANGE BD</h1>
+            <h1 className='text-3xl text-center font-semibold'>WELCOME TO Dynamic Skillbase</h1>
             <Slider />
             {
                 user?.status === "active" &&
@@ -47,7 +47,7 @@ const UserFeed = () => {
                             settings={settings} />
                         <CardSingleButton
                             className="row-span-1 "
-                            title={"Life Change BD Support Meeting"}
+                            title={"Dynamic Skillbase Support Meeting"}
                             button={"Get Meeting Link"}
                             link={settings.support_link}
                         />

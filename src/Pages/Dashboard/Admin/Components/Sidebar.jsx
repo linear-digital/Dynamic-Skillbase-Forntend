@@ -20,6 +20,7 @@ import { getRolename } from "./UserProfileDialog";
 export function Sidebar({ setShow }) {
     const [active, setActive] = useState(1);
     const path = useLocation();
+
     const dispatch = useDispatch();
     const { user, wallet } = useSelector((state) => state.user);
     const [publicImage, setPublicImage] = useState("");
