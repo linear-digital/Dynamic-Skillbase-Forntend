@@ -5,8 +5,8 @@ import toast from 'react-hot-toast';
 const ApplyFor = () => {
     const roles = [
         "Trainer",
-        "Group Leader",
-        "Senior Group Leader",
+        "Team Leader",
+        "Senior Team Leader",
         "Teacher",
         "Checker",
         "Manager",
@@ -15,8 +15,8 @@ const ApplyFor = () => {
         "Controler",
         "Senior Controler",
         "Telecaller",
-        "Consultant",
-        "Senior Consultant",
+        "Counselor",
+        "Senior Counselor",
         "Lead Checker",
         "Audit",
         "Support",

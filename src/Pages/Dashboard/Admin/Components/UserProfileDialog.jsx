@@ -38,7 +38,7 @@ export const USER_ROLES = [
         label: "Senior Manager"
     },
     {
-        label: "Senior Group Leader",
+        label: "Senior Team Leader",
         value: "sgl",
     },
     {
@@ -258,7 +258,7 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
                                     settings: { ...inValues.settings, gl: e.target.value }
                                 })}
                                 value={inValues.settings.gl}
-                                label={"Group Leader"}
+                                label={"Team Leader"}
                                 readOnly={readOnly}
                             />
                                 :
@@ -268,7 +268,7 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
                                         settings: { ...inValues.settings, sgl: e.target.value }
                                     })}
                                     value={inValues.settings.sgl}
-                                    label={"Senior Group Leader"}
+                                    label={"Senior Team Leader"}
                                     readOnly={readOnly}
                                 />
                         }

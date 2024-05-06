@@ -20,7 +20,7 @@ const SENIOR_GL = () => {
     return (
         <div className='p-5'>
             <Header
-                pageName={"Group Leaders"}
+                pageName={"Team Leaders"}
                 setDates={setFilters}
                 user={user?.userId}
                 role={"gl"}

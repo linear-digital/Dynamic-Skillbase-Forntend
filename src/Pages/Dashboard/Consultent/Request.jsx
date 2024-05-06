@@ -75,7 +75,7 @@ const ProfileCard = ({ user }) => {
                 </div>
                 <ul className="py-4 mt-2 text-gray-700 flex items-center justify-around">
                     <li className="flex flex-col items-center justify-around">
-                        <h1>Consultant</h1>
+                        <h1>Counselor</h1>
                         <p className='text-xs'>{user?.settings?.consultant}</p>
                     </li>
                     <li className="flex flex-col items-center justify-around">

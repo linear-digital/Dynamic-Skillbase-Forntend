@@ -189,6 +189,9 @@ const links = [
         path: "ref-history"
     },
     {
+        name: "Classes",
+        path: "classes"
+    },{
         name: "Courses",
         path: "courses"
     },

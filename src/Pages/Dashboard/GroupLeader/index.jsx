@@ -13,7 +13,7 @@ const GroupLeaders = () => {
     },[])
     return (
         <div className='p-5'>
-            <Header pageName={"Group Leaders"} setDates={setFilters} />
+            <Header pageName={"Team Leaders"} setDates={setFilters} />
             <TableSC filters={filters} setFilters={setFilters} />
         </div>
     );

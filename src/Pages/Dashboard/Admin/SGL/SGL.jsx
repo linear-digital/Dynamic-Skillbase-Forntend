@@ -13,7 +13,7 @@ const SGL = () => {
     },[])
     return (
         <div className='p-5'>
-            <Header pageName={"Senior Group Leader"} setDates={setFilters} />
+            <Header pageName={"Senior Team Leader"} setDates={setFilters} />
             <TableSC filters={filters} />
         </div>
     );

@@ -52,6 +52,7 @@ import Count from "../Pages/Dashboard/Count/Count";
 import Search from '../Pages/Search/Search';
 import ApplyFor from "../Pages/Apply/ApplyFor";
 import Groups from "../Pages/User/Groups/Groups";
+import Classes from "../Pages/User/Classes";
 
 const commonRoutes = [
 
@@ -253,6 +254,10 @@ const router = createBrowserRouter([
                     {
                         path: "courses",
                         element: <CoursesUser />,
+                    },
+                    {
+                        path: "classes",
+                        element: <Classes />,
                     },
                     {
                         path: "courses/:id",

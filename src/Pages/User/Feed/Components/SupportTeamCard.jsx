@@ -1,3 +1,5 @@
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     Card,
     CardBody,
@@ -17,13 +19,14 @@ export function SupportTeamCard({ className, settings }) {
             <CardFooter>
                 <div className=" flex justify-between items-center">
                     <Typography className="text-base font-semibold">
-                        My Group Leader
+                        My Team Leader
                     </Typography>
                     <Button
                         variant="filled"
-                        className="bg-primary"
+                        className="bg-primary gap-2 flex items-center"
                     >
-                        Start Soon
+                        <FontAwesomeIcon icon={faWhatsapp} />
+                        Contact
                     </Button>
                 </div>
                 <div className="mt-5 flex justify-between items-center">
@@ -32,36 +35,25 @@ export function SupportTeamCard({ className, settings }) {
                     </Typography>
                     <Button
                         variant="filled"
-                        className="bg-primary"
+                        className="bg-primary gap-2 flex items-center"
                     >
-                        Start Soon
+                        <FontAwesomeIcon icon={faWhatsapp} />
+                        Contact
                     </Button>
                 </div>
                 <div className="mt-5 flex justify-between items-center">
                     <Typography className="text-base font-semibold">
-                        Support WhatsApp Group
+                        Senior Team Leader
                     </Typography>
-                    {
-                        settings?.whatsapp === "" ? (
-                            <Button
-                                className="bg-primary"
-                                variant="filled"
-                            >
-                                Join
-                            </Button>
-                        )
-                            :
-                            (
-                                <a href={settings?.whatsapp} target="_blank" rel="noreferrer">
-                                    <Button
-                                        className="bg-primary"
-                                        variant="filled"
-                                    >
-                                        Join
-                                    </Button>
-                                </a>
-                            )
-                    }
+                    <a href={settings?.whatsapp} target="_blank" rel="noreferrer">
+                        <Button
+                            variant="filled"
+                            className="bg-primary gap-2 flex items-center"
+                        >
+                            <FontAwesomeIcon icon={faWhatsapp} />
+                            Contact
+                        </Button>
+                    </a>
                 </div>
             </CardFooter>
 
