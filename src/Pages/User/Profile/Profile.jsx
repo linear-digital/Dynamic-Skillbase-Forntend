@@ -40,7 +40,7 @@ const Profile = ({ data }) => {
                 </div>
                 <div className="border-t border-gray-200">
                     <div className="flex items-start h-screen w-full justify-start">
-                        <div className="max-w-md w-full">
+                        <div className="w-full">
                             <div className="bg-white shadow-xl rounded-lg py-3">
                                 <div className="photo-wrapper p-2">
                                     <img class="w-32 h-32 rounded-full border border-primary mx-auto" src={imageUrl(user?.image)}
@@ -52,48 +52,25 @@ const Profile = ({ data }) => {
                                     <div className="text-center text-cyan-700 text-sm font-semibold">
                                         <p>{getRolename(user?.role)}</p>
                                     </div>
-                                    <table className="text-xs my-3">
-                                        <tbody><tr>
-                                            <td className="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                                            <td className="px-2 py-2">
-                                                {user?.email}
-                                            </td>
-                                        </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                                                <td className="px-2 py-2">{user?.phone}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">UserId</td>
-                                                <td className="px-2 py-2">{user?.userId}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">Whatsapp</td>
-                                                <td className="px-2 py-2">{user?.whatsapp}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">Country</td>
-                                                <td className="px-2 py-2">{user?.country}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">Reference</td>
-                                                <td className="px-2 py-2">{user?.reference}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">Group leader</td>
-                                                <td className="px-2 py-2">{user?.settings?.gl}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="px-2 py-2 text-gray-500 font-semibold">Trainer</td>
-                                                <td className="px-2 py-2">{user?.settings?.trainer}</td>
-                                            </tr>
-                                            {
-                                                user?.status === "active" && user?.role === "user" && !data &&
-                                                <tr>
-                                                    <td className="px-2 py-2 text-gray-500 font-semibold">
-                                                        Refer Link</td>
+                                    <section className='mt-10'>
+                                        <Card title="Email" desc={user?.email} />
+                                        <Card title="Phone" desc={user?.phone} />
+                                        <Card title="Whatsapp" desc={user?.whatsapp} />
+                                        <Card title="UserId" desc={user?.userId} />
+                                        <Card title="Country" desc={user?.country} />
+                                        <Card title="Reference" desc={user?.reference} />
+                                        <Card title="Team Leader" desc={user?.settings?.gl} />
+                                        <Card title="Trainee" desc={user?.settings?.trainer} />
+                                        <Card title="Counselor" desc={user?.settings?.consultant} />
+                                        {
+                                            user?.status === "active" && user?.role === "user" && !data &&
+                                            <div className='grid grid-cols-2 mb-3 gap-2'>
+                                                <div className='border p-2'>
+                                                    Refer Link
+                                                </div>
+                                                <div className='border p-2'>
                                                     <div className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center gap-3">
-                                                        <button onClick={() => whatsappLink(referLink)} className='btn btn-sm btn-secondary'>
+                                                        <button onClick={() => whatsappLink(referLink)} className='btn btn-sm btn-primary'>
                                                             <FontAwesomeIcon className='ml-2 text-sm' icon={faShare} />
                                                             Share
                                                         </button>
@@ -103,14 +80,14 @@ const Profile = ({ data }) => {
                                                                 toast.success("Refer Link Copied!")
                                                             }
                                                             }
-                                                            className='btn btn-sm btn-secondary'>
+                                                            className='btn btn-sm btn-primary'>
                                                             Copy
                                                         </button>
                                                     </div>
-                                                </tr>
-                                            }
-
-                                        </tbody></table>
+                                                </div>
+                                            </div>
+                                        }
+                                    </section>
                                 </div>
                             </div>
                         </div>
@@ -125,4 +102,15 @@ const Profile = ({ data }) => {
 
 export default Profile;
 
-
+const Card = ({ title, desc }) => {
+    return (
+        <div className='grid grid-cols-2 mb-3 gap-2'>
+            <div className='border p-2'>
+                {title}
+            </div>
+            <div className='border p-2'>
+                {desc}
+            </div>
+        </div>
+    )
+}
