@@ -61,7 +61,7 @@ const Profile = ({ data }) => {
                                         <Card title="Country" desc={user?.country} />
                                         <Card title="Reference" desc={user?.reference} />
                                         <Card title="Team Leader" desc={user?.settings?.gl} />
-                                        <Card title="Trainee" desc={user?.settings?.trainer} />
+                                        <Card title="Trainer" desc={user?.settings?.trainer} />
                                         <Card title="Counselor" desc={user?.settings?.consultant} />
                                         {
                                             user?.status === "active" && user?.role === "user" && !data &&
