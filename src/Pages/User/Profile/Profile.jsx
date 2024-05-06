@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { whatsappLink } from '../../../helper/linkgenerateor';
 import { getRolename } from '../../Dashboard/Admin/Components/UserProfileDialog';
 import { imageUrl } from '../../../Components/Shared/imageUrl';
+import Groups from '../Groups/Groups';
 const Profile = ({ data }) => {
     const [user, setUser] = useState({});
     const { user: currentUser, noData } = useSelector((state) => state.user);
@@ -93,6 +94,9 @@ const Profile = ({ data }) => {
                         </div>
                     </div>
                 </div>
+                {
+                    user?.role === "user" && <Groups />
+                }
             </div>
 
 

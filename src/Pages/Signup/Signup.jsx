@@ -14,6 +14,7 @@ import Logo from '../../Components/Brand/Logo';
 const Signup = () => {
 
     const [whatsapp, setWhatsApp] = useState('')
+    const [telegram, setTelegram] = useState('')
 
     const [values, setValues] = useState({
         firstName: '',
@@ -44,7 +45,7 @@ const Signup = () => {
                         return toast.error('Please enter a valid phone number and whatsapp number');
                     }
                     // Perform signup logic here
-                    const response = await api.post('/users/register', { ...values, whatsapp });
+                    const response = await api.post('/users/register', { ...values, whatsapp, telegram });
                     toast.success('Account created successfully');
                     setUser(response.data);
                     setOpen(true);
@@ -79,9 +80,9 @@ const Signup = () => {
     return (
         <div>
             <div className="min-h-[100vh] bg-gray-100 py-6 flex flex-col justify-center sm:py-12 text-black bg-cover bg-center"
-            style={{
-                backgroundImage: `url(/images/bg/auth-bg.jpg)`
-            }}
+                style={{
+                    backgroundImage: `url(/images/bg/auth-bg.jpg)`
+                }}
             >
                 <BlankDialog open={open} setOpen={setOpen} size={"sm"}>
                     <div className='py-5 text-black px-5'>
@@ -173,25 +174,26 @@ const Signup = () => {
                                             label="Whatsapp Number" placeholder="Enter Your Whatsapp Number"
 
                                         /> */}
-                                        <div className="">
-                                            <label className="text-xs mb-1">
-                                                Phone Number
-                                            </label>
-                                            <Input
-                                                onChange={handleChange}
-                                                name='phone'
-                                                variant="outlined" label="Phone Number" placeholder="Your Phone Number"
-                                                className='w-full'
 
-                                            />
-                                        </div>
                                         <PhoneNumberSelector
                                             placeholder={'Whatsapp Number'}
                                             state={whatsapp}
                                             setState={setWhatsApp}
                                             countrySelected={values.country}
                                         />
+                                        <PhoneNumberSelector
+                                            placeholder={'Telegram Number'}
+                                            state={telegram}
+                                            setState={setTelegram}
+                                            countrySelected={values.country}
+                                        />
+                                        <Input
+                                            onChange={handleChange}
+                                            name='phone'
+                                            variant="outlined" label="Phone Number" placeholder="Your Phone Number"
+                                            className='w-full'
 
+                                        />
                                         <Input
                                             onChange={handleChange}
                                             name='email'
@@ -207,16 +209,17 @@ const Signup = () => {
                                             variant="outlined"
                                             label="Enter Reference No." placeholder="Enter Reference No."
                                         />
-                                        <div className="col-span-2">
-                                            <Input
-                                                onChange={handleChange}
-                                                name='password'
-                                                variant="outlined"
-                                                label="Enter A Secure Password"
-                                                type='text'
-                                                placeholder="Enter A Secure Password"
-                                            />
-                                        </div>
+
+
+                                        <Input
+                                            onChange={handleChange}
+                                            name='password'
+                                            variant="outlined"
+                                            label="Enter A Secure Password"
+                                            type='text'
+                                            placeholder="Enter A Secure Password"
+                                        />
+
                                     </div>
                                     <p className='text-red-500 text-sm'>
                                         {error}

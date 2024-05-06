@@ -422,7 +422,10 @@ const adminLinks = [
         name: "Courses",
         path: "courses",
     },
-
+    {
+        name: "Whatsapp Groups",
+        path: "groups",
+    },
     {
         name: "Site Management",
         path: "settings",

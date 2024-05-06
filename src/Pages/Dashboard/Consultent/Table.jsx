@@ -13,7 +13,7 @@ import SetTime from './SetTime';
 
 
 const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
-    const [TABLE_HEAD, setTABLE_HEAD] = useState(["Date", "User id", "Name", "Phone", "Whatsapp", "Referer", "Message", "Message Done"]);
+    const [TABLE_HEAD, setTABLE_HEAD] = useState(["Date", "User id", "Name", "Phone", "Whatsapp", "Telegram", "Referer", "Message", "Message Done"]);
     const { user } = useSelector((state) => state.user);
     const location = useLocation();
     const pageNumber = new URLSearchParams(location.search).get('page')
@@ -88,10 +88,11 @@ const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
     }
     useEffect(() => {
         if (complete) {
-            setTABLE_HEAD(["Date", "User id", "Name", "Phone", "Whatsapp", "Referer", "Message", "Message Done", "Set Time"]);
+            setTABLE_HEAD(["Date", "User id", "Name", "Phone", "Whatsapp", "Telegram", "Referer", "Message", "Message Done", "Set Time"]);
         }
         else {
-            setTABLE_HEAD(["Date", "User id", "Name", "Phone", "Whatsapp", "Referer", "Message", "Message Done"]);
+            setTABLE_HEAD(["Date", "User id", "Name", "Phone", "Whatsapp",
+                "Telegram", "Referer", "Message", "Message Done"]);
         }
 
     }, [complete, status])
@@ -266,7 +267,8 @@ const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
                                                         color="blue-gray"
                                                         className="font-normal opacity-70"
                                                     >
-                                                        {user?.phone}
+                                                        {/* {user?.phone} */}
+                                                        <a href={`tel:${user?.phone}`} className='btn btn-xs btn-primary'>Call</a>
                                                     </Typography>
                                                 </div>
                                             </div>
@@ -284,7 +286,21 @@ const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
                                                         color="blue-gray"
                                                         className="font-normal opacity-70"
                                                     >
-                                                        {user?.whatsapp}
+                                                        <a href={`https://wa.me/${user?.whatsapp}`} className='btn btn-xs btn-primary'>Whatsapp</a>
+                                                    </Typography>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className={classes}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div className="flex flex-col">
+                                                    <Typography
+                                                        variant="small"
+                                                        color="blue-gray"
+                                                        className="font-normal opacity-70"
+                                                    >
+                                                        {user?.telegram}
                                                     </Typography>
                                                 </div>
                                             </div>

@@ -51,6 +51,7 @@ import TimeZone from "../Pages/Time-Zone/TimeZone";
 import Count from "../Pages/Dashboard/Count/Count";
 import Search from '../Pages/Search/Search';
 import ApplyFor from "../Pages/Apply/ApplyFor";
+import Groups from "../Pages/User/Groups/Groups";
 
 const commonRoutes = [
 
@@ -161,6 +162,10 @@ const router = createBrowserRouter([
                     {
                         path: 'count',
                         element: <Count role={"admin"} />,
+                    },
+                    {
+                        path: 'groups',
+                        element: <Courses_Admin mode={"groups"} />,
                     },
                     {
                         path: 'search',

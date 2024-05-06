@@ -93,7 +93,7 @@ const CourseForm = ({ setOpen, refetch, mode, course: editCourse }) => {
     }, [editCourse, mode])
     return (
         <div className='text-black p-4'>
-            <h1 className='text-lg'>Add New Course</h1>
+            <h1 className='text-lg'>{mode === "edit" ? "Edit" : "Add New"} Course</h1>
             <div className='mt-5'>
                 <InputFeild
                     label="Title"

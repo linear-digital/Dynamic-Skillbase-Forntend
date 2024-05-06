@@ -6,8 +6,10 @@ import Loader from '../../../../Components/Shared/Loader';
 import { Button } from '@material-tailwind/react';
 import { BlankDialog } from '../../../../Components/Dialog/BlankDialog';
 import CourseForm from './_COMP/CourseForm';
+import GroupCard from '../../../User/Groups/GroupCard';
+import GroupForm from './_COMP/GroupForm';
 
-const Courses_Admin = () => {
+const Courses_Admin = ({ mode }) => {
     const { data: courses, isLoading, refetch } = useQuery({
         queryKey: ["courses"],
         queryFn: async () => {
@@ -15,24 +17,46 @@ const Courses_Admin = () => {
             return response.data;
         }
     })
+    const { data: groups, isLoading: isLoadingGroup, refetch: refetchGroup } = useQuery({
+        queryKey: ["groups"],
+        queryFn: async () => {
+            const response = await api.get("/group");
+            return response.data;
+        }
+    })
     const [open, setOpen] = useState(false);
-    if (isLoading) {
+
+    if (isLoading || isLoadingGroup) {
         return <Loader />
     }
     return (
         <div className='p-5'>
-            <h1 className='lg:text-2xl text-xl font-semibold'>Couses Management</h1>
+            <h1 className='lg:text-2xl text-xl font-semibold'>{
+                mode === "groups" ? "Whatsapp Groups" : "Couses Management"
+            }</h1>
             <Button onClick={() => setOpen(true)} className='mt-3'>
-                Add New Course
+                Add New {mode === "groups" ? "Group" : "Course"}
             </Button>
-            <div className="flex-wrap gap-4 flex mt-10">
-                {
-                    courses?.filter(course => course?._id !== "66092db02726bc7bb3f9588c")?.map(course => <CourseCard key={course._id} course={course} user="admin" refetch={refetch} />)
-                }
-            </div>
+            {
+                mode !== "groups" ? <div className="flex-wrap gap-4 flex mt-10">
+                    {
+                        courses?.filter(course => course?._id !== "66092db02726bc7bb3f9588c")?.map(course => <CourseCard key={course._id} course={course} user="admin" refetch={refetch} />)
+                    }
+                </div>
+                    :
+                    <div className='grid grid-cols-5 gap-3 mt-10'>
+                        {
+                            groups?.map(group => <GroupCard key={group._id} title={group.name} link={group.link} mode={"edit"}
+                                data={group} refetch={refetchGroup} refetchGroup={refetchGroup}
+                            />)
+                        }
+                    </div>
+            }
 
             <BlankDialog open={open} setOpen={setOpen} >
-                <CourseForm refetch={refetch} setOpen={setOpen} />
+                {
+                    mode === "groups" ? <GroupForm setOpen={setOpen} refetch={refetchGroup} mode={mode} /> : <CourseForm setOpen={setOpen} refetch={refetch} mode={mode} />
+                }
             </BlankDialog>
         </div>
     );
