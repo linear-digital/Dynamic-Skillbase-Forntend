@@ -220,7 +220,7 @@ const Signup = () => {
                                         {error}
                                     </p>
                                     <div className="relative">
-                                        <button className="btn btn-primary btn-sm px-6 rounded-md py-2">Register</button>
+                                        <button className="btn btn-primary btn-sm px-6 rounded-md py-2">Registration</button>
                                     </div>
 
                                     <div className='pt-2 text-start text-sm'>
