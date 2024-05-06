@@ -3,7 +3,7 @@ import path from "path";
 import https from "https";
 import fs from "fs";
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3300;
 
 // Get the directory name using import.meta.url
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
@@ -15,8 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
-const privateKey = fs.readFileSync("server.key");
-const certificate = fs.readFileSync("server.cert");
 
 
 app.listen(PORT, () => {
