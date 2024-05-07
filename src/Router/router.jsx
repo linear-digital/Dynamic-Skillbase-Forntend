@@ -53,6 +53,7 @@ import Search from '../Pages/Search/Search';
 import ApplyFor from "../Pages/Apply/ApplyFor";
 import Groups from "../Pages/User/Groups/Groups";
 import Classes from "../Pages/User/Classes";
+import Notice from "../Pages/Dashboard/Admin/Settings/Notice";
 
 const commonRoutes = [
 
@@ -228,6 +229,9 @@ const router = createBrowserRouter([
                     {
                         path: 'withdrawals',
                         element: <Withdrawals />,
+                    }, {
+                        path: 'notice',
+                        element: <Notice />,
                     },
                     {
                         path: '*',

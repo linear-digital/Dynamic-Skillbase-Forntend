@@ -431,6 +431,10 @@ const adminLinks = [
         name: "Site Management",
         path: "settings",
     },
+    {
+        name: "Notice",
+        path: "notice",
+    },
 ]
 
 export const links = [

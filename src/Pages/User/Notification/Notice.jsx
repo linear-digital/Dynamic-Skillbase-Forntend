@@ -13,10 +13,10 @@ import { Card } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeftAlt } from "@fortawesome/free-solid-svg-icons";
 export default function Notice() {
-    const { data: users, isLoading, refetch } = useQuery({
-        queryKey: ["best performers"],
+    const { data: users, isLoading } = useQuery({
+        queryKey: ["notice"],
         queryFn: async () => {
-            const response = await api.get("/performer");
+            const response = await api.get("/notice");
             return response.data;
         }
     })
@@ -38,12 +38,12 @@ export default function Notice() {
                     users?.map(user => {
                         return (
                             <SwiperSlide key={user?._id} className="w-full  py-5">
-                                <Card className="w-full px-10 bg-primary lg:h-[220px] relative flex justify-center items-center">
+                                <Card className="w-full px-10 bg-primary lg:h-[220px] overflow-y-auto relative flex justify-center items-center">
                                     <FontAwesomeIcon icon={faQuoteLeftAlt}
                                         className="text-5xl text-blue-900 absolute left-20 top-10"
                                     />
                                     <p className="text-white z-20 text-center">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum sapiente quia rem assumenda, esse quaerat doloremque iusto! Debitis qui atque consectetur eveniet et sit ipsam nesciunt commodi iusto nihil distinctio labore ea rerum veritatis est autem modi similique cumque cum doloremque nisi unde, excepturi fugiat! Aperiam a enim dolorum vel, esse et voluptatum suscipit veniam sapiente saepe cupiditate, voluptatibus sequi rerum, magni modi doloremque culpa quibusdam harum. Sint quaerat consectetur inventore. Nobis reiciendis illo aut unde dolore fugit quisquam ea ipsam aliquam? Quos tempora quas sunt asperiores eum error, mollitia odio officia fuga voluptas sequi fugit debitis possimus nam et.
+                                        {user?.text}
                                     </p>
                                 </Card>
                             </SwiperSlide>
