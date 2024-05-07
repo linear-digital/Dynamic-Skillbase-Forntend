@@ -67,7 +67,7 @@ const Banners = () => {
     }
     return (
         <div className="w-full p-5">
-          
+            <h1 className="text-xl lg:text-2xl font-semibold">Daily Best Performers</h1>
             {
                 publicImage && <img src={publicImage} className='mx-auto mb-5 rounded border border-cyan-300 max-w-96' alt="" />
             }
