@@ -407,10 +407,11 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
 }
 
 export const InputFeild = ({
-    onChange, value, name, placeholder, label, type, readOnly }) => {
+    onChange, value, name, placeholder, label, type, readOnly, required }) => {
 
     return <div className="mb-5 w-full">
         <Input
+            required={required}
             readOnly={readOnly}
             type={type ? type : 'text'}
             name={name}

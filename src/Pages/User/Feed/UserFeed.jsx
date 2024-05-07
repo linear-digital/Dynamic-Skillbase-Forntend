@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '../../../Components/axios/axios.instance';
 import Loader from '../../../Components/Shared/Loader';
+import Notice from '../Notification/Notice';
 
 const UserFeed = () => {
     const { settings, user } = useSelector(state => state.user)
@@ -40,7 +41,8 @@ const UserFeed = () => {
     return (
         <div className='lg:p-10 p-5'>
             <h1 className='text-3xl text-center font-semibold'>WELCOME TO Dynamic Skillbase</h1>
-            {/* <Slider /> */}
+            <Notice />
+            <Slider />
             {
                 user?.status === "active" ?
                     <div className='mt-10'>

@@ -17,7 +17,7 @@ const GroupCard = ({ title, link, mode, data, refetch , refetchGroup }) => {
         }
     }
     return (
-        <Card className='p-5 flex flex-col items-center text-gray-900'>
+        <Card className='p-5 flex flex-col items-center text-gray-900 w-full'>
             <h1 className='text-xl font-semibold'>{title}</h1>
             <h2 className='mt-1'>
                 Whatsapp Group

@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../../../Components/Shared/Loader';
 import { BannerCard } from './BannerCard';
+import { InputFeild } from '../Components/UserProfileDialog';
 
 const Banners = () => {
     const [image, setImage] = useState(null);
@@ -11,34 +12,54 @@ const Banners = () => {
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["banners"],
         queryFn: async () => {
-            const response = await api.get("/users/setting/3434");
+            const response = await api.get("/performer");
             return response.data;
         }
     })
+
+    const [imgPath, setImgPath] = useState(null);
+    const [name, setName] = useState("");
+    const [user, setUser] = useState("");
     useEffect(() => {
         try {
             if (image) {
                 const url = URL.createObjectURL(image)
                 setPublicImage(url)
+                setImgPath("")
             }
         } catch (error) {
             console.error(error);
         }
     }, [image])
-    const uploadImage = async () => {
+
+    const uploadImage = async (e) => {
+        e.preventDefault();
         try {
-            const formData = new FormData();
-            formData.append("image", image);
-            const response = await apiUpload.post('/upload', formData);
-            if (response.data) {
+            let path
+            if (!imgPath) {
+                const formData = new FormData();
+                formData.append("image", image);
+                const response = await apiUpload.post('/upload', formData);
+                setImgPath(response.data.path);
+                path = response.data.path
+            }
+
+            if ((imgPath || path) && name && user) {
                 setImage(null);
                 setPublicImage("");
-                const res = await api.put(`/users/add-banner`, response.data);
+                const res = await api.post(`/performer`, {
+                    image: imgPath || path,
+                    name,
+                    user: user
+                });
                 toast.success(res?.data?.message);
                 refetch();
             }
+            else {
+                toast.error("Please fill all the fields");
+            }
         } catch (error) {
-            console.error(error);
+            toast.error(error?.response?.data?.message || "Something went wrong");
         }
     }
     if (isLoading) {
@@ -46,11 +67,7 @@ const Banners = () => {
     }
     return (
         <div className="w-full p-5">
-            <div className="grid grid-cols-2 gap-2 mb-5">
-               {
-                   data?.banners?.map((banner, index) => <BannerCard key={index} banner={banner} refetch={refetch} />)
-               }
-            </div>
+          
             {
                 publicImage && <img src={publicImage} className='mx-auto mb-5 rounded border border-cyan-300 max-w-96' alt="" />
             }
@@ -67,15 +84,14 @@ const Banners = () => {
                                             setImage(e.target.files[0]);
                                         }}
                                     />
-                                    <div className="text bg-indigo-600 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-indigo-500">Select</div>
+                                    <div className="text bg-indigo-600 text-white border border-gray-300 rounded font-semibold text-sm cursor-pointer p-1 px-3 hover:bg-indigo-500">Select Image</div>
                                 </label>
-                                <div className="title text-indigo-500 uppercase">or drop files here</div>
+                                <div className="title text-indigo-500 text-sm uppercase">or drop files here</div>
                             </div>
                         </div>
                     </div>
                     :
                     <div className='flex gap-5 justify-center items-center'>
-                        <button onClick={uploadImage} className="btn btn-primary px-6">Upload Banner</button>
                         <button onClick={() => {
                             setImage(null)
                             setPublicImage("")
@@ -84,6 +100,27 @@ const Banners = () => {
                         </button>
                     </div>
             }
+            <form onSubmit={uploadImage}>
+                <InputFeild
+                    required={true}
+                    label={"Student Name"}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <InputFeild
+                    required={true}
+                    label={"USER_ID"}
+                    onChange={(e) => setUser(e.target.value)}
+                    placeholder={"2024000"}
+                />
+                <button type='submit' className='btn btn-primary'>
+                    Save
+                </button>
+            </form>
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 mt-5">
+                {
+                    data?.map(banner => <BannerCard key={banner?._id} banner={banner} refetch={refetch} />)
+                }
+            </div>
         </div>
 
     );

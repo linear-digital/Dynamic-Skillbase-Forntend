@@ -44,7 +44,7 @@ const Courses_Admin = ({ mode }) => {
                     }
                 </div>
                     :
-                    <div className='grid grid-cols-5 gap-3 mt-10'>
+                    <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-3'>
                         {
                             groups?.map(group => <GroupCard key={group._id} title={group.name} link={group.link} mode={"edit"}
                                 data={group} refetch={refetchGroup} refetchGroup={refetchGroup}

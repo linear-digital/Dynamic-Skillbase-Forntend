@@ -74,6 +74,7 @@ const Count = ({ role }) => {
             else if (targertRole === "admin") {
                 dataFetcher({ role: "user" })
             }
+            
             else if (targertRole === "user") {
                 dataFetcher({ role: "user" })
             }
