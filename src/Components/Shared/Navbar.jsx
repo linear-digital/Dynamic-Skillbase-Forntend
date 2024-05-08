@@ -11,11 +11,12 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-function NavList() {
+function NavList({ onClick }) {
     const { user } = useSelector((state) => state.user);
     return (
         <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
             <Typography
+                onClick={onClick}
                 as="li"
                 variant="small"
                 color="blue-gray"
@@ -26,6 +27,7 @@ function NavList() {
                 </Link>
             </Typography>
             <Typography
+                onClick={onClick}
                 as="li"
                 variant="small"
                 color="blue-gray"
@@ -36,6 +38,7 @@ function NavList() {
                 </Link>
             </Typography>
             <Typography
+                onClick={onClick}
                 as="li"
                 variant="small"
                 color="blue-gray"
@@ -46,16 +49,18 @@ function NavList() {
                 </Link>
             </Typography>
             <Typography
+                onClick={onClick}
                 as="li"
                 variant="small"
                 color="blue-gray"
                 className="p-1 font-medium"
             >
                 <Link to={'/apply-for'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
-                   Sub Admins
+                    Sub Admins
                 </Link>
             </Typography>
             <Typography
+                onClick={onClick}
                 as="li"
                 variant="small"
                 color="blue-gray"
@@ -66,6 +71,7 @@ function NavList() {
                 </Link>
             </Typography>
             <Typography
+                onClick={onClick}
                 as="li"
                 className="p-1 font-medium lg:ml-5"
             >
@@ -123,6 +129,7 @@ export function TopNavbar() {
             className="fixed left-0 right-0 lg:top-3 top-0 z-10 h-max max-w-full rounded px-4 py-2 lg:px-8 lg:py-2 bg-white container mx-auto shadow-md">
             <div className="flex items-center justify-between text-black w-full bg-white">
                 <Typography
+                    onClick={() => setOpenNav(!openNav)}
                     variant="h6"
                     className="mr-4 cursor-pointer py-1.5"
                 >
@@ -147,7 +154,7 @@ export function TopNavbar() {
                 </IconButton>
             </div>
             <Collapse open={openNav} className="text-white">
-                <NavList />
+                <NavList onClick={() => setOpenNav(false)}/>
             </Collapse>
         </Navbar>
     );

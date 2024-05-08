@@ -8,8 +8,7 @@ import { TopNavbar } from '../Shared/Navbar';
 
 
 const PublicLayout = () => {
-
-
+    
     return (
         <div className="bg-white min-h-screen text-black">
             <TopNavbar />
