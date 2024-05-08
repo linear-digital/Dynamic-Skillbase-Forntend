@@ -3,8 +3,8 @@ import Logo from "../../Components/Brand/Logo";
 
 const Footer = () => {
   return (
-    <div className="w-full p-2  mt-10 shadow-inner bg-gray-100" >
-      <footer className="relative z-10 bg-gray-100 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] container mx-auto">
+    <div className="w-full p-5  mt-10 shadow-inner bg-gray-100" >
+      <footer className="relative  bg-gray-100 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] container mx-auto">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
             <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
