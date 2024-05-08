@@ -3,18 +3,17 @@ import Logo from "../../Components/Brand/Logo";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="relative z-10 bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] container mx-auto">
+    <div className="w-full p-2  mt-10 shadow-inner bg-gray-100" >
+      <footer className="relative z-10 bg-gray-100 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] container mx-auto">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
             <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
               <div className="mb-10 w-full">
                 <a href="/#" className="mb-6 inline-block max-w-[160px]">
-                 <Logo />
+                  <Logo />
                 </a>
                 <p className="mb-7 text-base text-body-color dark:text-dark-6">
-                  Sed ut perspiciatis undmnis is iste natus error sit amet
-                  voluptatem totam rem aperiam.
+                  "Dynamic SkillBase: Empowering Growth. Versatile courses for personal and professional development. Learn essential skills for success in a fast-paced world. Start your journey today!"
                 </p>
                 <p className="flex items-center text-sm font-medium text-dark dark:text-white">
                   <span className="mr-3 text-primary">
@@ -55,13 +54,14 @@ const Footer = () => {
               <NavLink link="/#" label="About Dynamic Skillbase" />
               <NavLink link="/#" label="Contact & Support" />
               <NavLink link="/#" label="Success History" />
-              <NavLink link="/#" label="Setting & Privacy" />
+              <NavLink link="/privacy-policy" label="Privacy & Policy" />
             </LinkGroup>
             <LinkGroup header="Quick Links">
               <NavLink link="/#" label="Premium Support" />
               <NavLink link="/#" label="Our Services" />
               <NavLink link="/#" label="Know Our Team" />
               <NavLink link="/#" label="Download App" />
+              <NavLink link="/terms-condition" label="Terms & Conditions" />
             </LinkGroup>
 
             <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
@@ -124,7 +124,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  &copy; 2025 Dynamic Skillbase
+                  &copy; {new Date().getFullYear()} Dynamic Skillbase
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ const Footer = () => {
           </span>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

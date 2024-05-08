@@ -10,9 +10,9 @@ import {
 } from "@material-tailwind/react";
 
 export function PhoneNumberSelector({ state, setState, countrySelected, placeholder }) {
-    const { countries } = useCountries();
+    
     const [country, setCountry] = React.useState(1);
-    const { name, flags, countryCallingCode} = countries[country];
+    const { name, flags, countryCallingCode } = countries[country];
     const [value, setValue] = useState("");
     useEffect(() => {
         if (countrySelected) {
@@ -80,3 +80,157 @@ export function PhoneNumberSelector({ state, setState, countrySelected, placehol
         </div>
     );
 }
+
+const countries = [
+    {
+        name: 'Bangladesh',
+        capital: 'Dhaka',
+        currencies: [{
+            name: 'Bangladeshi taka',
+            symbol: '৳'
+        }],
+        languages: ['Bengali'],
+        coordinates: [24, 90],
+        area: 147570,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/op6gmLbHcvv6rLhH6',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/184640'
+        },
+        population: 164689383,
+        postalCode: {
+            format: '####',
+            regex: '^(\\d{4})$'
+        },
+        flags: {
+            png: 'https://flagcdn.com/w320/bd.png',
+            svg: 'https://flagcdn.com/bd.svg'
+        },
+        emoji: '🇧🇩',
+        countryCallingCode: '+88'
+    },
+    {
+        name: 'India',
+        capital: 'New Delhi',
+        currencies: [{
+            name: 'Indian rupee',
+            symbol: '₹'
+        }],
+        languages: ['English', 'Hindi', 'Tamil'],
+        coordinates: [20, 77],
+        area: 3287590,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/WSk3fLwG4vtPQetp7',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/304716'
+        },
+        population: 1380004385,
+        postalCode: {
+            format: '######',
+            regex: '^(\\d{6})$'
+        },
+        flags: {
+            png: 'https://flagcdn.com/w320/in.png',
+            svg: 'https://flagcdn.com/in.svg'
+        },
+        emoji: '🇮🇳',
+        countryCallingCode: '+91'
+    },
+    {
+        name: 'Saudi Arabia',
+        capital: 'Riyadh',
+        currencies: [{
+            name: 'Saudi riyal',
+            symbol: 'ر.س'
+        }],
+        languages: ['Arabic'],
+        coordinates: [25, 45],
+        area: 2149690,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/5PSjvdJ1AyaLFRrG9',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/307584'
+        },
+        population: 34813867,
+        postalCode: {
+            format: '#####',
+            regex: '^(\\d{5})$'
+        },
+        flags: {
+            png: 'https://flagcdn.com/w320/sa.png',
+            svg: 'https://flagcdn.com/sa.svg'
+        },
+        emoji: '🇸🇦',
+        countryCallingCode: '+966'
+    },
+    {
+        name: 'United Arab Emirates',
+        capital: 'Abu Dhabi',
+        currencies: [{
+            name: 'United Arab Emirates dirham',
+            symbol: 'د.إ'
+        }],
+        languages: ['Arabic'],
+        coordinates: [24, 54],
+        area: 83600,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/AZZTDA6GzVAnKMVd8',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/307763'
+        },
+        population: 9890400,
+        flags: {
+            png: 'https://flagcdn.com/w320/ae.png',
+            svg: 'https://flagcdn.com/ae.svg'
+        },
+        emoji: '🇦🇪',
+        countryCallingCode: '+971'
+    },
+    {
+        name: 'Malaysia',
+        capital: 'Kuala Lumpur',
+        currencies: [{
+            name: 'Malaysian ringgit',
+            symbol: 'RM'
+        }],
+        languages: ['English', 'Malay'],
+        coordinates: [2.5, 112.5],
+        area: 330803,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/qrY1PNeUXGyXDcPy6',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/2108121'
+        },
+        population: 32365998,
+        postalCode: {
+            format: '#####',
+            regex: '^(\\d{5})$'
+        },
+        flags: {
+            png: 'https://flagcdn.com/w320/my.png',
+            svg: 'https://flagcdn.com/my.svg'
+        },
+        emoji: '🇲🇾',
+        countryCallingCode: '+60'
+    },
+    {
+        name: 'Nepal',
+        capital: 'Kathmandu',
+        currencies: [{
+            name: 'Nepalese rupee',
+            symbol: '₨'
+        }],
+        languages: ['Nepali'],
+        coordinates: [28, 84],
+        area: 147181,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/UMj2zpbQp7B5c3yT7',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/184633'
+        },
+        population: 29136808,
+        postalCode: {
+            format: '#####',
+            regex: '^(\\d{5})$'
+        },
+        flags: {
+            png: 'https://flagcdn.com/w320/np.png',
+            svg: 'https://flagcdn.com/np.svg'
+        },
+        emoji: '🇳🇵',
+        countryCallingCode: '+977'
+    }];

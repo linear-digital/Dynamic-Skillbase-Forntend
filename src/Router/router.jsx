@@ -54,6 +54,8 @@ import ApplyFor from "../Pages/Apply/ApplyFor";
 import Groups from "../Pages/User/Groups/Groups";
 import Classes from "../Pages/User/Classes";
 import Notice from "../Pages/Dashboard/Admin/Settings/Notice";
+import Statistics from "../Pages/Dashboard/Count_Result/Count_Result";
+import AboutUs from "../Pages/Home/AboutUs";
 
 const commonRoutes = [
 
@@ -131,7 +133,9 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'about',
-                        element: <About />,
+                        element: <div className="pt-[200px] pb-5">
+                        <AboutUs />
+                        </div>,
                     },
                     {
                         path: 'login',
@@ -289,6 +293,10 @@ const router = createBrowserRouter([
                         element: <ConsultantOSC />,
                     },
                     {
+                        path: "statistics",
+                        element: <Statistics />,
+                    },
+                    {
                         path: 'search',
                         element: <Search />,
                     },
@@ -324,6 +332,10 @@ const router = createBrowserRouter([
                     {
                         path: 'time-zone',
                         element: <TimeZone />,
+                    },
+                    {
+                        path: "statistics",
+                        element: <Statistics />,
                     },
                     {
                         path: 'requests',
@@ -388,6 +400,10 @@ const router = createBrowserRouter([
                         element: <SingleConsultant page={"trainer"} />,
                     },
                     {
+                        path: "statistics",
+                        element: <Statistics />,
+                    },
+                    {
                         path: 'users',
                         element: <Users />,
                     },
@@ -413,6 +429,10 @@ const router = createBrowserRouter([
                         element: <ConsultantOSC page={"gl"} />,
                     },
                     {
+                        path: "statistics",
+                        element: <Statistics />,
+                    },
+                    {
                         path: 'gl/:id',
                         element: <SingleConsultant page={"gl"} />,
                     },
@@ -423,10 +443,6 @@ const router = createBrowserRouter([
                     {
                         path: 'count',
                         element: <Count role={"gl"} />,
-                    },
-                    {
-                        path: 'users',
-                        element: <Users />,
                     },
                     {
                         path: '*',
@@ -488,6 +504,10 @@ const router = createBrowserRouter([
                     {
                         path: "users",
                         element: <Trainer_Page />,
+                    },
+                    {
+                        path: "statistics",
+                        element: <Statistics />,
                     },
                     ...commonRoutes,
                     {

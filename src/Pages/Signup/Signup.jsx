@@ -185,12 +185,18 @@ const Signup = () => {
                                         <Input
                                             onChange={handleChange}
                                             name='phone'
+                                            type='number'
                                             variant="outlined" label="Phone Number" placeholder="Your Phone Number"
                                             className='w-full'
 
                                         />
                                         <Input
-                                            onChange={handleChange}
+                                            onChange={(e) => {
+                                                if (e.target.value.includes(" ")) {
+                                                    e.target.value = e.target.value.replace(" ", "")
+                                                }
+                                                handleChange(e)
+                                            }}
                                             name='email'
                                             variant="outlined"
                                             type='email'

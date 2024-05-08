@@ -2,7 +2,7 @@ import React from 'react';
 
 const TermCondition = () => {
     return (
-        <div className='text-white mx-auto py-10 max-w-[750px] w-full'>
+        <div className='text-black mx-auto py-10 max-w-[750px] w-full'>
             <h1 className='text-center text-4xl'>TERMS AND CONDITIONS</h1>
             <ol className='list-decimal list-outside mt-7  mx-auto terms'>
                 <li>
@@ -28,7 +28,7 @@ const TermCondition = () => {
                     <br />👇👇👇👇👇
                     <br />
                     <h5 className='font-bold py-2'>
-                        Email: Dynamic Skillbase4@gmail.com
+                        Email: <a href="mailto:dynamicskillbase@gmail.com">dynamicskillbase@gmail.com</a>
                     </h5>
                 </li>
                 <li>

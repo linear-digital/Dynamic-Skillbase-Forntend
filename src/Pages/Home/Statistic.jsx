@@ -9,23 +9,23 @@ const Statistic = ({ page }) => {
                 <div className={`flex lg:flex-row flex-col ${page ? "" : "lg:absolute"} top-[-80px] left-0 right-0 items-center justify-center lg:gap-10 gap-5`}>
                     <StatisticCard
                         text={"Best Education"}
-                        text2={"Courses"}
+                        desc={"Lifelong learning, critical thinking, ignites curiosity, opens doors."}
                         icon={'/images/icons/books.png'}
                         link={'/courses'}
                     />
                     <StatisticCard
                         text={"Expert Teachers"}
-                        text2={"Mentors"}
+                        desc={"Inspiring minds, igniting curiosity, shaping futures."}
                         icon={'/images/icons/avatar.png'}
                     />
                     <StatisticCard
-                        text={"Testy Food"}
-                        text2={"Access"}
+                        text={"Team Work"}
+                        desc={"A team of dedicated educators, with a passion for teaching."}
                         icon={'/images/icons/time.png'}
                     />
                     <StatisticCard
                         text={"Life Time Access"}
-                        text2={"Access"}
+                        desc={"Unlimited access, yours for as long as you live."}
                         icon={'/images/icons/time.png'}
                     />
                 </div>

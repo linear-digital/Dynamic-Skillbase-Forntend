@@ -296,6 +296,10 @@ const glLinks = [
         path: "users",
     },
     {
+        name: "Statistics",
+        path: "statistics",
+    },
+    {
         name: "Search",
         path: "search"
     }
@@ -305,6 +309,10 @@ const trainer = [
         name: "Users",
         path: "users",
     },
+    {
+        name: "Statistics",
+        path: "statistics",
+    }
 ]
 const cm = [
     {
@@ -318,7 +326,7 @@ const cm = [
     {
         name: "Counselor",
         path: "consultants"
-    },
+    }
 ]
 const course = [
     {
@@ -336,16 +344,12 @@ const manager = [
     {
         name: "User Management",
         path: "users",
-    },
+    }
 ]
 const sglLinks = [
     {
         name: "Team Leaders",
         path: "gl",
-    },
-    {
-        name: "User Management",
-        path: "users",
     },
     {
         name: "Search",
@@ -360,6 +364,10 @@ const consultantLinks = [
     {
         name: "User Management",
         path: "users",
+    },
+    {
+        name: "Statistics",
+        path: "statistics",
     },
     {
         name: "Request ",

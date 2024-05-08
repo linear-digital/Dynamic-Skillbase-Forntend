@@ -31,6 +31,16 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium"
             >
+                <Link to={'/about'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
+                    About
+                </Link>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="p-1 font-medium"
+            >
                 <Link to={'/courses'} href="#" className="flex items-center text-black text-base hover:text-primary transition-colors">
                     Courses
                 </Link>
