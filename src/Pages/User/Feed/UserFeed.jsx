@@ -42,8 +42,12 @@ const UserFeed = () => {
         <div className='lg:p-10 p-5'>
             <h1 className='text-3xl text-center font-semibold'>WELCOME TO Dynamic Skillbase</h1>
             <Notice />
-            <Slider type={"daily"} />
-            <Slider type={"weekly"} />
+            {
+                user.status === "active" && <>
+                    <Slider type={"daily"} />
+                    <Slider type={"weekly"} />
+                </>
+            }
             {
                 user?.status === "active" ?
                     <div className='mt-10'>
