@@ -11,11 +11,11 @@ import { Card } from "@material-tailwind/react";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-export default function Slider() {
+export default function Slider({ type }) {
     const { data: users, isLoading } = useQuery({
         queryKey: ["best performers"],
         queryFn: async () => {
-            const response = await api.get("/performer");
+            const response = await api.get("/performer?type=" + type);
             return response.data;
         }
     })
@@ -25,7 +25,9 @@ export default function Slider() {
     }
     return (
         <div className="w-full mb-10">
-            <h1 className="text-center text-3xl font-semibold mt-10"> Daily Best Performers</h1>
+            <h1 className="text-center text-3xl font-semibold mt-10"> <span className="capitalize">
+                {type}
+            </span> Best Performers</h1>
             <Swiper
                 breakpoints={{
                     640: {

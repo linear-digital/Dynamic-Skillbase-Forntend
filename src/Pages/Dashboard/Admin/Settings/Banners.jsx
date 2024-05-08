@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import Loader from '../../../../Components/Shared/Loader';
 import { BannerCard } from './BannerCard';
 import { InputFeild } from '../Components/UserProfileDialog';
+import { Option, Select } from '@material-tailwind/react';
 
 const Banners = () => {
     const [image, setImage] = useState(null);
@@ -20,6 +21,7 @@ const Banners = () => {
     const [imgPath, setImgPath] = useState(null);
     const [name, setName] = useState("");
     const [user, setUser] = useState("");
+    const [type, setType] = useState("");
     useEffect(() => {
         try {
             if (image) {
@@ -50,7 +52,8 @@ const Banners = () => {
                 const res = await api.post(`/performer`, {
                     image: imgPath || path,
                     name,
-                    user: user
+                    user: user,
+                    type
                 });
                 toast.success(res?.data?.message);
                 refetch();
@@ -112,7 +115,16 @@ const Banners = () => {
                     onChange={(e) => setUser(e.target.value)}
                     placeholder={"2024000"}
                 />
-                <button type='submit' className='btn btn-primary'>
+                <div className='mt-5'>
+                    <Select value={type} onChange={(e) => setType(e)}
+                        label='Select Performer Type'
+                    >
+                        <Option value='' disabled>Select</Option>
+                        <Option value='daily'>Daily</Option>
+                        <Option value='weekly'>Weekly</Option>
+                    </Select>
+                </div>
+                <button type='submit' className='btn btn-primary mt-5'>
                     Save
                 </button>
             </form>

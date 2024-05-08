@@ -42,7 +42,8 @@ const UserFeed = () => {
         <div className='lg:p-10 p-5'>
             <h1 className='text-3xl text-center font-semibold'>WELCOME TO Dynamic Skillbase</h1>
             <Notice />
-            <Slider />
+            <Slider type={"daily"} />
+            <Slider type={"weekly"} />
             {
                 user?.status === "active" ?
                     <div className='mt-10'>
@@ -66,7 +67,9 @@ const UserFeed = () => {
                     </div>
                     :
                     <Card className='py-10 flex items-center flex-col'>
-                        <p className='text-center text-xl'>Your Account is Inactive Please Contact With Your Counselor</p>
+                        <p className='text-center text-xl'>
+                            Your Account is Inactive Please Contact With Your Counselor
+                        </p>
                         <button className='btn btn-primary mt-5'>
                             <a href={`https://wa.me/${counselor?.whatsapp}`} target="_blank" rel="noreferrer">Whatsapp</a>
                         </button>
