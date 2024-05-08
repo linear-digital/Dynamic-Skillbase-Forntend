@@ -296,8 +296,8 @@ const glLinks = [
         path: "users",
     },
     {
-        name: "Count",
-        path: "count",
+        name: "Search",
+        path: "search"
     }
 ]
 const trainer = [

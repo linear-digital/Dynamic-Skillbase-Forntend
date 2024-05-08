@@ -392,10 +392,6 @@ const router = createBrowserRouter([
                         element: <Users />,
                     },
                     {
-                        path: 'count',
-                        element: <Count role={"trainer"} />,
-                    },
-                    {
                         path: '*',
                         element: <NotFound />,
                     }

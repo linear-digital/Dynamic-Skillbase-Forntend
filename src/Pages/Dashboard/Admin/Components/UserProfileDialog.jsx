@@ -90,12 +90,13 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
             trainer: user?.settings?.trainer,
             consultant: user?.settings?.apprentice,
         },
-        status: ""
+        status: "",
     });
     const { user: currentUser } = useSelector((state) => state.user)
     const formHandler = async (e) => {
         e.preventDefault();
         const values = Object.fromEntries(new FormData(e.target));
+        console.log(values);
         const settings = {
             ...inValues.settings,
             admin: user?.settings?.admin?._id,
@@ -136,9 +137,6 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
         }
     })
 
-    const selectCourseHandler = (course) => {
-
-    }
     const [addAmmount, setAddAmmount] = useState(0);
     const addMoneyHandler = async () => {
         if (!addAmmount) {
@@ -151,7 +149,7 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
             source: "Admin",
         }
         try {
-            const response = await api.put(`/users/balance`, {
+             await api.put(`/users/balance`, {
                 amount: Number(addAmmount),
                 user: user._id
             });
@@ -227,8 +225,9 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
                             label={"Account Due: Not updateable"}
                         />
                         <InputFeild
+                            type={"number"}
                             readOnly={readOnly}
-                            name={"referance"}
+                            name={"reference"}
                             value={user?.reference}
                             label={"Referance"}
                         />
@@ -350,38 +349,44 @@ export function UserProfileDialog({ user, open, setOpen, refetch, type }) {
                             </div>
                         }
 
-                        <div className="mb-5">
-                            <label htmlFor="" className="text-sm">
-                                Status
-                            </label>
-                            <StatusChanger
-                                user={user}
-                                refetch={refetch}
-                                setOpen={setOpen}
-                            />
+                        {
+                            currentUser?.role === "admin" &&
 
-                        </div>
-                        <div className="mb-5">
-                            <label htmlFor="" className="text-sm">
-                                Lock Account
-                            </label>
-                            {
-                                user?.locked ?
-                                    <div>
-                                        <div onClick={() => loackAcount(false)} className="btn btn-success bg-green-500 border-none text-white btn-sm">
-                                            Unlock Account
-                                        </div>
-                                    </div>
-                                    :
-                                    <div>
-                                        <div
-                                            onClick={() => loackAcount(true)}
-                                            className="btn btn-error text-white btn-sm">
-                                            Lock this account
-                                        </div>
-                                    </div>
-                            }
-                        </div>
+                            <><div className="mb-5">
+                                <label htmlFor="" className="text-sm">
+                                    Status
+                                </label>
+                                <StatusChanger
+                                    user={user}
+                                    refetch={refetch}
+                                    setOpen={setOpen}
+                                />
+
+                            </div>
+                                <div className="mb-5">
+                                    <label htmlFor="" className="text-sm">
+                                        Lock Account
+                                    </label>
+                                    {
+                                        user?.locked ?
+                                            <div>
+                                                <div onClick={() => loackAcount(false)} className="btn btn-success bg-green-500 border-none text-white btn-sm">
+                                                    Unlock Account
+                                                </div>
+                                            </div>
+                                            :
+                                            <div>
+                                                <div
+                                                    onClick={() => loackAcount(true)}
+                                                    className="btn btn-error text-white btn-sm">
+                                                    Lock this account
+                                                </div>
+                                            </div>
+                                    }
+                                </div>
+                            </>
+                        }
+
                         {
                             currentUser?.role === "admin" && <Button variant="gradient" color="green" type="submit"
                                 fullWidth
