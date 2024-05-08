@@ -12,7 +12,7 @@ import { Card } from "@material-tailwind/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
 export default function Slider() {
-    const { data: users, isLoading, refetch } = useQuery({
+    const { data: users, isLoading } = useQuery({
         queryKey: ["best performers"],
         queryFn: async () => {
             const response = await api.get("/performer");

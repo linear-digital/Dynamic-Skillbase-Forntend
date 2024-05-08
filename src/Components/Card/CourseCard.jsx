@@ -145,7 +145,7 @@ const CourseCard = ({ user, course, refetch, autoEnrolled }) => {
         <div className="card rounded overflow-hidden lg:max-w-[380px] h-[390px] w-full bg-[#e1f3e8] p-3 shadow-xl relative border justify-between">
             <button
                 onClick={() => navigate(`/courses/${course?._id}`)}
-                className='btn btn-sm  btn-primary  absolute'>
+                className='btn btn-sm  btn-secondary   absolute'>
                 ${course?.price}
             </button>
             <img

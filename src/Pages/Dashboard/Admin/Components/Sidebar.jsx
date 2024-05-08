@@ -95,7 +95,7 @@ export function Sidebar({ setShow }) {
                         adminLinks.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -111,7 +111,7 @@ export function Sidebar({ setShow }) {
                         scLinks.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -127,7 +127,7 @@ export function Sidebar({ setShow }) {
                         consultantLinks.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -142,7 +142,7 @@ export function Sidebar({ setShow }) {
                         glLinks.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -157,7 +157,7 @@ export function Sidebar({ setShow }) {
                         sglLinks.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -173,7 +173,7 @@ export function Sidebar({ setShow }) {
                         course.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -189,7 +189,7 @@ export function Sidebar({ setShow }) {
                         checker.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -204,7 +204,7 @@ export function Sidebar({ setShow }) {
                         cm.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -219,7 +219,7 @@ export function Sidebar({ setShow }) {
                         trainer.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -234,7 +234,7 @@ export function Sidebar({ setShow }) {
                         manager.map((link, index) => (
                             <ListItem key={index} onClick={() => {
                                 if (deviceType === "mobile") {
-                                    setShow(false);
+                                    // setShow(false);
                                 }
                                 navigate(link.path)
                             }}>
@@ -250,7 +250,7 @@ export function Sidebar({ setShow }) {
                     links.map((link, index) => (
                         <NavLink onClick={() => {
                             if (deviceType === "mobile") {
-                                setShow(false);
+                                // setShow(false);
                             }
                         }} key={index}
                             to={link.path} className={`w-full px-5 py-2 hover:bg-primary hover:text-white text-white  ${path.pathname === link.path ? "bg-primary text-white font-normal" : ""}`}>

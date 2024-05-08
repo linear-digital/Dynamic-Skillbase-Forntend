@@ -31,8 +31,8 @@ const User = () => {
         return <Loader />
     }
     return (
-        <main className='gradint-bg lg:flex w-full gap-5 text-black  overflow-hidden'>
-            <div className="w-full lg:w-auto">
+        <main className='gradint-bg lg:flex w-full h-full gap-5 text-black  overflow-hidden'>
+            <div className="w-full h-full lg:w-auto">
                 <div className="bg-white py-4 px-5 text-black lg:hidden">
                     <Bars3Icon className="w-9 h-9" onClick={() => setShow(!show)} />
                 </div>
@@ -43,7 +43,7 @@ const User = () => {
                     </button>
                 </div>
             </div>
-            <div className="col-span-10 h-full overflow-y-auto w-full lg:p-5 gradint-bg pb-[150px]">
+            <div className="col-span-10 h-full overflow-y-auto w-full lg:p-5 p-4 gradint-bg pb-[150px] ">
                 <Outlet />
             </div>
         </main>

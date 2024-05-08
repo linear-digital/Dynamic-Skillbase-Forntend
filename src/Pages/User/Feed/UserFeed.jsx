@@ -48,6 +48,21 @@ const UserFeed = () => {
                     <div className='mt-10'>
                         <SupportTeamCard className="row-span-2 text-black"
                             settings={settings} />
+                        <div className="grid lg:grid-cols-2 gap-x-10 gap-y-5 mt-10">
+                            <CardSingleButton
+                                className="row-span-1"
+                                title={"May I Help You"}
+                                button={"Get Link"}
+                                link={settings.helpyou_link}
+                            />
+
+                            <CardSingleButton
+                                className="row-span-1 "
+                                title={"Dynamic Skillbase Support Meeting"}
+                                button={"Get Meeting Link"}
+                                link={settings.support_link}
+                            />
+                        </div>
                     </div>
                     :
                     <Card className='py-10 flex items-center flex-col'>

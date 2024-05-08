@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 
 
 const UsersTable = ({ filters, setUsers, setStatistic }) => {
-    const [TABLE_HEAD, setTABLE_HEAD] = useState(["Date", "Active Date", "User id", "Name", "Phone", "Whatsapp", "Reference", "Consultant", "G L", "Status"]);
+    const [TABLE_HEAD, setTABLE_HEAD] = useState(["Date", "Active Date", "User id", "Name", "Phone", "Whatsapp", "Reference", "Consultant", "T L", "Status"]);
     const { user } = useSelector((state) => state.user);
     const [selectedUser, setSelectedUser] = useState(null);
     const [open, setOpen] = useState(false)

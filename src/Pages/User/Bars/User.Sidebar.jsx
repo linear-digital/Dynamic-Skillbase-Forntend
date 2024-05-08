@@ -105,7 +105,7 @@ export function UserSidebar({ setShow }) {
                 <ListItem className="p-0 " 
                     onClick={() => {
                         if (deviceType === "mobile") {
-                            setShow(false);
+                            // setShow(false);
                         }
                     }}
                 >
@@ -130,7 +130,7 @@ export function UserSidebar({ setShow }) {
                             links.map((link, index) => (
                                 <ListItem key={index} onClick={() => {
                                     if (deviceType === "mobile") {
-                                        setShow(false);
+                                        // setShow(false);
                                     }
                                     navigate(link.path)
                                 }}>
@@ -144,7 +144,7 @@ export function UserSidebar({ setShow }) {
                             links2.map((link, index) => (
                                 <ListItem key={index} onClick={() => {
                                     if (deviceType === "mobile") {
-                                        setShow(false);
+                                        // setShow(false);
                                     }
                                     navigate(link.path)
                                 }}>

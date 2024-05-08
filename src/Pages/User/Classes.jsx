@@ -26,21 +26,7 @@ const Classes = () => {
     return (
         <div>
             <>
-                <div className="lg:grid grid-cols-2 gap-x-10 gap-y-5 mt-10">
-                    <CardSingleButton
-                        className="row-span-1"
-                        title={"May I Help You"}
-                        button={"Get Link"}
-                        link={settings.helpyou_link}
-                    />
-                    
-                    <CardSingleButton
-                        className="row-span-1 "
-                        title={"Dynamic Skillbase Support Meeting"}
-                        button={"Get Meeting Link"}
-                        link={settings.support_link}
-                    />
-                </div>
+               
                 <div className="flex justify-center mt-10">
                     <NormalCard className={"max-w-[450px] w-full border text-black"}>
                         <CardBody>

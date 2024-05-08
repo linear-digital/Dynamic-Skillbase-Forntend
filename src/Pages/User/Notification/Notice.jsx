@@ -30,20 +30,20 @@ export default function Notice() {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
-                autoplay={{ delay: 2000 }}
+                autoplay={{ delay: 5000 }}
                 loop={true}
                 modules={[Pagination, Autoplay]}
                 className=" mt-7 w-full">
                 {
                     users?.map(user => {
                         return (
-                            <SwiperSlide key={user?._id} className="w-full  py-5">
-                                <Card className="w-full px-10 bg-primary lg:h-[220px] overflow-y-auto relative flex justify-center items-center">
+                            <SwiperSlide key={user?._id} className="w-full">
+                                <Card className="w-full lg:px-10 px-5 bg-primary h-[220px] pt-5 overflow-y-auto relative flex justify-center items-center">
                                     <FontAwesomeIcon icon={faQuoteLeftAlt}
                                         className="text-5xl text-blue-900 absolute left-20 top-10"
                                     />
                                     <p className="text-white z-20 text-center">
-                                        {user?.text}
+                                        {(user?.text).slice(0, 350)}
                                     </p>
                                 </Card>
                             </SwiperSlide>
