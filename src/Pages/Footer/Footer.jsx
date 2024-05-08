@@ -55,13 +55,14 @@ const Footer = () => {
               <NavLink link="/#" label="About Dynamic Skillbase" />
               <NavLink link="/#" label="Contact & Support" />
               <NavLink link="/#" label="Success History" />
-              <NavLink link="/#" label="Setting & Privacy" />
+              <NavLink link="/#" label="Privacy Policy" />
             </LinkGroup>
             <LinkGroup header="Quick Links">
               <NavLink link="/#" label="Premium Support" />
               <NavLink link="/#" label="Our Services" />
               <NavLink link="/#" label="Know Our Team" />
               <NavLink link="/#" label="Download App" />
+              <NavLink link="/#" label="Terms and Conditions" />
             </LinkGroup>
 
             <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
@@ -124,7 +125,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  &copy; 2025 Dynamic Skillbase
+                  &copy; 2024 Dynamic Skillbase
                 </p>
               </div>
             </div>
