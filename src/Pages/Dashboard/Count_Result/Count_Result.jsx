@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { api } from '../../../Components/axios/axios.instance';
 import Loader from '../../../Components/Shared/Loader';
+import Table from '../Count/Table';
 
 
 const Statistics = ({ role }) => {
@@ -80,6 +81,10 @@ const Statistics = ({ role }) => {
                     Search
                 </Button>
             </div>
+            {
+                result &&
+                <Table users={result} />
+            }
         </div>
     );
 };
