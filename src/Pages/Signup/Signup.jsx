@@ -41,9 +41,6 @@ const Signup = () => {
             if (!missingProperties.length) {
                 setError('');
                 try {
-                    if (!validatePhone(whatsapp).isValid) {
-                        return toast.error('Please enter a valid phone number and whatsapp number');
-                    }
                     // Perform signup logic here
                     const response = await api.post('/users/register', { ...values, whatsapp, telegram });
                     toast.success('Account created successfully');
