@@ -63,13 +63,13 @@ const Settings = () => {
                         />
                         <InputFeild
                             type={"number"}
-                            name={"counselor_bonus"}
+                            name={"counsultant_bonus"}
                             value={setting?.counsultant_bonus}
                             label={"Bonus for counselor"}
                         />
                         <InputFeild
                             type={"number"}
-                            name={"team_leader_bonus"}
+                            name={"gl_bonus"}
                             value={setting?.gl_bonus}
                             label={"Bonus for Team Leader"}
                         />

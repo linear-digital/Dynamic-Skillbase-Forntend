@@ -244,6 +244,18 @@ const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
                                                 >
                                                     {user?.userId}
                                                 </Typography>
+                                                <button
+                                                    onClick={() => {
+
+                                                        navigator.clipboard.writeText(`
+                                                        Name: ${user?.firstName + " " + user?.lastName} , UserID: ${user?.userId}, Phone: ${user?.phone} , Whatsapp: ${user?.whatsapp} , Date : ${moment(user?.createdAt).format("DD/MM/YYYY hh:mm A")},
+                                                        Telegram ID: ${user?.telegram} , Refer ID: ${user?.referer ? user?.referer?.userId : "N/A"}
+                                                        `)
+
+                                                    }}
+                                                    className='btn btn-xs btn-primary ml-1'>
+                                                    Copy
+                                                </button>
                                             </div>
                                         </td>
                                         <td className={classes}>
