@@ -32,4 +32,5 @@ Student ID:- ${message.userId}
     `);
     const url = `https://wa.me/${phone}?text=${messageToSend} `
     window.open(url, "_blank");
+    return url
 }

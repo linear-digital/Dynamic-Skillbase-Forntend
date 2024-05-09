@@ -69,9 +69,9 @@ const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
 
 
     const [complete, setComplete] = useState(false)
-    const sendMessage = (user) => {
-        const whatsapp = (user?.phone?.startsWith("+") || user?.phone?.startsWith("88")) ? user?.phone : `+88${user?.phone}`
-        sendWhatsappMessage(whatsapp, { name: user?.firstName + " " + user?.lastName, userId: user?.userId })
+    const sendMessage = async (user) => {
+        const whatsapp = (user?.whatsapp?.startsWith("+") || user?.whatsapp?.startsWith("88")) ? user?.whatsapp : `+88${user?.whatsapp}`
+        const res = await sendWhatsappMessage(whatsapp, { name: user?.firstName + " " + user?.lastName, userId: user?.userId })
     }
     const messageUpdate = async (user, type) => {
         try {
@@ -298,7 +298,9 @@ const UsersTable = ({ filters: filtersReq, setUsers, consultant }) => {
                                                         color="blue-gray"
                                                         className="font-normal opacity-70"
                                                     >
-                                                        <a href={`https://wa.me/${user?.whatsapp}`} className='btn btn-xs btn-primary'>Whatsapp</a>
+                                                        <button onClick={() => {
+                                                            sendMessage(user)
+                                                        }} className='btn btn-xs btn-primary'>Whatsapp</button>
                                                     </Typography>
                                                 </div>
                                             </div>
