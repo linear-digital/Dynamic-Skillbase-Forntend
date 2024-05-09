@@ -13,7 +13,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 export default function Slider({ type }) {
     const { data: users, isLoading } = useQuery({
-        queryKey: ["best performers"],
+        queryKey: ["best performers", type],
         queryFn: async () => {
             const response = await api.get("/performer?type=" + type);
             return response.data;
