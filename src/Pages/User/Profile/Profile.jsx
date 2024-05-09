@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationCircle, faShare } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import Loader from '../../../Components/Shared/Loader';
 import toast from 'react-hot-toast';
@@ -57,7 +57,7 @@ const Profile = ({ data }) => {
                             <section className='mt-10'>
                                 <Card title="Email" desc={user?.email} />
                                 <Card title="Phone" desc={user?.phone} />
-                                <Card title="Whatsapp" desc={user?.whatsapp} />
+                                <Card title="Whatsapp" desc={user?.whatsapp} isError={true} />
                                 <Card title="UserId" desc={user?.userId} />
                                 <Card title="Country" desc={user?.country} />
                                 <Card title="Reference" desc={user?.reference} />
@@ -107,7 +107,7 @@ const Profile = ({ data }) => {
 
 export default Profile;
 
-const Card = ({ title, desc }) => {
+const Card = ({ title, desc, isError }) => {
     return (
         <div className='grid grid-cols-2 mb-3 gap-2'>
             <div className='border p-2 lg:text-base text-sm'>

@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 
 export function PhoneNumberSelector({ state, setState, countrySelected, placeholder }) {
-    
+
     const [country, setCountry] = React.useState(1);
     const { name, flags, countryCallingCode } = countries[country];
     const [value, setValue] = useState("");
@@ -18,12 +18,12 @@ export function PhoneNumberSelector({ state, setState, countrySelected, placehol
         if (countrySelected) {
             setCountry(countries.findIndex((item) => item.name === countrySelected))
         }
-    }, [countrySelected, countries])
+    }, [countrySelected])
     useEffect(() => {
-        setState(value.includes(countryCallingCode) ? value : `${countryCallingCode}${value.startsWith('0') ? value.slice(1) : value}`)
+        setState(value.includes(countryCallingCode) ? value : `${countryCallingCode}${value}`)
     }, [value, countryCallingCode, setState])
     return (
-        <div>
+        <div className="">
             <label className="text-xs mb-1">{placeholder}</label>
             <div className="relative flex w-full">
                 <Menu placement="bottom-start">
@@ -107,6 +107,32 @@ const countries = [
         },
         emoji: '🇧🇩',
         countryCallingCode: '+88'
+    },
+    {
+        name: 'Pakistan',
+        capital: 'Islamabad',
+        currencies: [{
+            name: 'Pakistani rupee',
+            symbol: '₨'
+        }],
+        languages: ['English', 'Urdu'],
+        coordinates: [30, 70],
+        area: 881912,
+        maps: {
+            googleMaps: 'https://goo.gl/maps/5LYujdfR5yLUXoERA',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/307573'
+        },
+        population: 220892331,
+        postalCode: {
+            format: '#####',
+            regex: '^(\\d{5})$'
+        },
+        flags: {
+            png: 'https://flagcdn.com/w320/pk.png',
+            svg: 'https://flagcdn.com/pk.svg'
+        },
+        emoji: '🇵🇰',
+        countryCallingCode: '+92'
     },
     {
         name: 'India',

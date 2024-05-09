@@ -1,5 +1,5 @@
 
-import { Button, CardBody, CardFooter, Chip, IconButton, Typography } from '@material-tailwind/react';
+import { Button, CardBody, CardFooter, Chip, IconButton, Option, Select, Typography } from '@material-tailwind/react';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment/moment';
@@ -8,6 +8,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { api } from '../../../Components/axios/axios.instance';
 import Loader from '../../../Components/Shared/Loader';
+import { BlankDialog } from '../../../Components/Dialog/BlankDialog';
+import { InputFeild } from '../../Dashboard/Admin/Components/UserProfileDialog';
+import { PhoneNumberSelector } from '../../Signup/PhoneNumberSelector';
+import { countrys } from '../../../data/countrys';
 
 
 const UsersTable = ({ filters, setStatistics }) => {
@@ -66,6 +70,22 @@ const UsersTable = ({ filters, setStatistics }) => {
             updatedQuery.append('status', status)
         }
         navigate(`${location.pathname}?${updatedQuery}`);
+    }
+    const [open, setOpen] = useState(false)
+    const [selectedUser, setSelectedUser] = useState(null)
+    const [whatsapp, setWhatsapp] = useState("")
+    const [error, setError] = useState(false)
+    const [country, setCountry] = useState("Bangladesh");
+    const updateNumber = async () => {
+        try {
+            const res = await api.put(`/users/update/${selectedUser?._id}`, { whatsapp, "settings.messageError": true })
+            toast.success(res.data.message)
+            setOpen(false)
+            refetch()
+        } catch (error) {
+            toast.error(error?.response?.data?.message || "Something went wrong");
+            setError(error?.response?.data?.message || "Something went wrong");
+        }
     }
     if (isLoading) {
         return <Loader />
@@ -212,6 +232,13 @@ const UsersTable = ({ filters, setStatistics }) => {
                                                         className="font-normal opacity-70"
                                                     >
                                                         {user?.whatsapp}
+                                                        {
+                                                            user?.settings?.messageError === "false" && <button onClick={() => {
+                                                                setOpen(true)
+                                                                setSelectedUser(user)
+
+                                                            }} className='btn btn-xs btn-secondary ml-3'>Update</button>
+                                                        }
                                                     </Typography>
                                                 </div>
                                             </div>
@@ -254,6 +281,35 @@ const UsersTable = ({ filters, setStatistics }) => {
                     </tbody>
                 </table>
             </CardBody>
+            <BlankDialog open={open} setOpen={setOpen}>
+                <div className='p-5 text-black min-h-[400px]' >
+                    <h1 className='text-center text-xl'>
+                        Update Whatsapp Number
+                    </h1>
+                    {error}
+                    <div className='mt-5 z-50'>
+                        {/* <InputFeild
+                            value={whatsapp}
+                            onChange={(e) => setWhatsapp(e.target.value)}
+                            label={"Whatsapp Number"}
+                            name={"whatsapp"}
+                        /> */}
+                        <div className='mb-5'>
+                            <Select label='Select Country' value={country} onChange={(e) => setCountry(e)}>
+                                {
+                                    countrys.map((country, index) => <Option key={index} value={country}>{country}</Option>)
+                                }
+                            </Select>
+                        </div>
+                        <PhoneNumberSelector
+                            countrySelected={country}
+                            state={whatsapp}
+                            setState={setWhatsapp}
+                        />
+                        <button onClick={updateNumber} className='btn mx-auto block btn-primary btn-sm mt-5'>Update</button>
+                    </div>
+                </div>
+            </BlankDialog>
         </React.Fragment>
 
     );

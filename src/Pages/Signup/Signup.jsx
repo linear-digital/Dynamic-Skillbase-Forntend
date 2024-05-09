@@ -148,7 +148,9 @@ const Signup = () => {
                                             onChange={(e) => setValues({ ...values, country: e })}
                                             name='country'
                                             variant="outlined"
-                                            label="Select Country">
+                                            label="Select Country"
+                                            className='z-10 bg-white'
+                                            >
                                             {
                                                 countrys.map((name, index) => (
                                                     <Option
