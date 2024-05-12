@@ -18,10 +18,6 @@ import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../../Components/Shared/Loader";
 export const USER_ROLES = [
     {
-        value: "admin",
-        label: "Admin"
-    },
-    {
         value: "user",
         label: "User"
     },
