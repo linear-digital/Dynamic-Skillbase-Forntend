@@ -24,7 +24,7 @@ const UsersTable = ({ filters, setUsers, setStatistic }) => {
     const { isLoading, data: users, refetch } = useQuery({
         queryKey: ["users", filters, pageNumber],
         queryFn: async () => {
-            const passbook = await api.post(`/users?page=${pageNumber}`, filters);
+            const passbook = await api.post(`/users?page=${pageNumber}`, { ...filters, iwant: true });
             setUsers && setUsers(passbook.data)
             setStatistic && setStatistic({
                 total: passbook.data.count,
@@ -255,8 +255,8 @@ const UsersTable = ({ filters, setUsers, setStatistic }) => {
                                                     >
                                                         <a href={`https://wa.me/${user?.whatsapp}`}
                                                             target='_blank' rel='noreferrer'
-                                                        className='btn-link'
-                                                       >
+                                                            className='btn-link'
+                                                        >
                                                             {user?.whatsapp}
                                                         </a>
                                                     </Typography>
