@@ -54,8 +54,6 @@ const ProfileCard = ({ user, role, active, inactive, total, refetch, page }) => 
                             :
                             page === "trainer" ?
                                 {
-                                    role: "user",
-                                    status: "active",
                                     "settings.gl": currentUser?.userId,
                                     $or: [
                                         { "settings.trainer": { $exists: false } },
