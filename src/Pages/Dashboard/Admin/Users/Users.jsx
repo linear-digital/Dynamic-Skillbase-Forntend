@@ -25,7 +25,7 @@ const Users = () => {
             setDates((prev) => ({ ...prev, role: "user" }))
         }
         else if (user?.role === "gl") {
-            setDates((prev) => ({ ...prev, role: "user", "settings.gl": user?.userId, status: "active" }))
+            setDates((prev) => ({ ...prev, "settings.gl": user?.userId, status: "active" , dw: true}))
         }
         else if (user?.role === "manager") {
             setDates((prev) => ({ ...prev, role: "user", startDate: new Date(date.getFullYear(), date.getMonth(), date.getDate()) }))

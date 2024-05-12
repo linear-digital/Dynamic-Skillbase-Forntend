@@ -6,7 +6,8 @@ import UserTableSCU from '../../Pages/Dashboard/SeniorConsultent/Consultents/USE
 import { imageUrl } from '../../Components/Shared/imageUrl';
 const ProfileCard = ({ user, role, active, inactive, total, refetch, page }) => {
     const [open, setOpen] = React.useState(false);
-    const {user: currentUser} = useSelector((state) => state.user);
+    const { user: currentUser } = useSelector((state) => state.user);
+    
     return (
         <div>
             <div className="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm bg-white shadow-xl rounded-lg text-gray-900 mt-3 pb-5">

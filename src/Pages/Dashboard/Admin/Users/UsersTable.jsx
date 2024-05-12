@@ -194,9 +194,9 @@ const UsersTable = ({ filters, setUsers, setStatistic }) => {
                                             >
                                                 {
                                                     user.settings?.activates ?
-                                                    moment(user.settings?.activates).format("DD/MM/YYYY hh:mm A")
-                                                    :
-                                                    "Not Activated"
+                                                        moment(user.settings?.activates).format("DD/MM/YYYY hh:mm A")
+                                                        :
+                                                        "Not Activated"
                                                 }
                                             </Typography>
                                         </td>
@@ -253,7 +253,12 @@ const UsersTable = ({ filters, setUsers, setStatistic }) => {
                                                         color="blue-gray"
                                                         className="font-normal opacity-70"
                                                     >
-                                                        {user?.whatsapp}
+                                                        <a href={`https://wa.me/${user?.whatsapp}`}
+                                                            target='_blank' rel='noreferrer'
+                                                        className='btn-link'
+                                                       >
+                                                            {user?.whatsapp}
+                                                        </a>
                                                     </Typography>
                                                 </div>
                                             </div>
