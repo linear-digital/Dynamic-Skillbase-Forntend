@@ -63,9 +63,9 @@ const Statistics = ({ role }) => {
                 "settings.gl": user?.userId,
             })
         }
-        else if (user?.role === "counsultant") {
+        else if (user?.role === "consultant") {
             dataFetcher({
-                "settings.counsultant": user?.userId,
+                "settings.consultant": user?.userId,
             })
         }
     }
@@ -78,7 +78,7 @@ const Statistics = ({ role }) => {
                 ({user?.firstName + " " + user?.lastName})</span></h1>
             <div className="max-w-72 mt-5">
                 <Button className='btn-primary' onClick={findUser} style={{ marginTop: "10px" }}>
-                    Search
+                    Count Result
                 </Button>
             </div>
             {

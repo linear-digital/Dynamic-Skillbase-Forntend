@@ -14,11 +14,11 @@ import { api } from '../../../../Components/axios/axios.instance';
 
 const TABS = [
     {
-        label: "Active User",
+        label: "Active",
         value: "?status=active",
     },
     {
-        label: "Inactive User",
+        label: "Inactive",
         value: "?status=inactive",
     },
 ];
@@ -75,26 +75,25 @@ const Header = ({ setDates, pageName, pn, filters, statistics }) => {
 
     }, [pageName, filters, pn, user])
     const searchUser = async (e) => {
-        setDates(prev => ({
-            ...prev, $or: [
-                {
-                    email: userId
-                },
-                {
-                    userId: userId
-                }
-            ]
-        }))
+        if (userId) {
+            const feilds = filters
+            delete feilds["status"]
+            setDates(prev => ({
+                ...feilds,
+                $or: [
+                    {
+                        email: userId
+                    },
+                    {
+                        userId: userId
+                    }
+                ]
+            }))
+        }
+        else {
+            delete filters["$or"]
+        }
     }
-    useEffect(() => {
-        if (!userId) {
-            const newState = { ...filters };
-            // Remove the property
-            delete newState["$or"];
-            // Update the state
-            setDates(newState);
-        };
-    }, [userId])
     return (
         <div>
             <div className="mb-8 flex items-center justify-between gap-8">
@@ -111,13 +110,13 @@ const Header = ({ setDates, pageName, pn, filters, statistics }) => {
                     {
                         user?.role !== "manager" ?
                             !pageName && <div className='mt-2 flex gap-3'>
-                                <Button color="white" className='py-5 shadow shadow-blue-gray-300'>
+                                <Button color="cyan">
                                     Total : {statistic.total}
                                 </Button>
                                 <Button color="green">
                                     Active : {statistic.active}
                                 </Button>
-                                <Button color="white" className='py-5 shadow shadow-blue-gray-300 text-red-600' >
+                                <Button color="red">
                                     Inactive : {statistic.inactive}
                                 </Button>
                             </div>
