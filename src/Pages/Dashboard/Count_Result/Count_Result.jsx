@@ -78,7 +78,7 @@ const Statistics = ({ role }) => {
                 ({user?.firstName + " " + user?.lastName})</span></h1>
             <div className="max-w-72 mt-5">
                 <Button className='btn-primary' onClick={findUser} style={{ marginTop: "10px" }}>
-                    Count Result
+                    Search
                 </Button>
             </div>
             {

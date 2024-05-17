@@ -292,6 +292,7 @@ const router = createBrowserRouter([
                         path: 'consultants',
                         element: <ConsultantOSC />,
                     },
+                    
                     {
                         path: "statistics",
                         element: <Statistics />,
@@ -336,6 +337,10 @@ const router = createBrowserRouter([
                     {
                         path: "statistics",
                         element: <Statistics />,
+                    },
+                    {
+                        path: 'search',
+                        element: <Search />,
                     },
                     {
                         path: 'requests',
@@ -398,6 +403,10 @@ const router = createBrowserRouter([
                     {
                         path: 'trainers/:id',
                         element: <SingleConsultant page={"trainer"} />,
+                    },
+                    {
+                        path: 'search',
+                        element: <Search />,
                     },
                     {
                         path: "statistics",
@@ -504,6 +513,10 @@ const router = createBrowserRouter([
                     {
                         path: "users",
                         element: <Trainer_Page />,
+                    },
+                    {
+                        path: 'search',
+                        element: <Search />,
                     },
                     {
                         path: "statistics",
