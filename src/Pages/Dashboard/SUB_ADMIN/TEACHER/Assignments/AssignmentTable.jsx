@@ -1,6 +1,6 @@
 
 import { Button, CardBody, CardFooter, Chip, IconButton, Typography } from '@material-tailwind/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -16,15 +16,15 @@ const AssignmentTable = () => {
     const location = useLocation();
     const pageNumber = new URLSearchParams(location.search).get('page')
     const navigate = useNavigate();
-    const [filters, setFilters] = useState({
-        course: user?.course?._id
-    })
-
+    const filters = {
+        course: user?.course?._id,
+        status: "pending"
+    }
     const { isLoading, data: assignments, refetch } = useQuery({
         queryKey: ["assignments", filters, pageNumber, user?.course?._id],
         queryFn: async () => {
             const passbook = await api.post(`/assignment/get?page=${pageNumber}`, {
-                course: user?.course?._id
+                ...filters
             });
             return passbook.data
         }
@@ -57,6 +57,7 @@ const AssignmentTable = () => {
     }
     const [open, setOpen] = useState(false);
     const [assignment, setAssignment] = useState(null);
+
     if (isLoading) {
         return <Loader />
     }
@@ -83,7 +84,7 @@ const AssignmentTable = () => {
                                 </IconButton>
                             ))
                         }
-                        {  
+                        {
                             pagesList().length > 5 &&
                             <>
                                 <IconButton
