@@ -7,7 +7,7 @@ const AssDetails = ({ assgnment, refetch, setOpen }) => {
     const assignmentHandler = async (type) => {
         try {
             if (type === "accepted") {
-                const res = await api.put(`/assignment/${assgnment?._id}`, {
+                const res = await api.put(`/assignment/accept/${assgnment?._id}`, {
                     status: "accepted",
                 })
                 toast.success("Updated Successfully")

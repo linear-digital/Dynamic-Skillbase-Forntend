@@ -45,7 +45,7 @@ const Settings = () => {
                         />
                         <InputFeild
                             type={"number"}
-                            name={"pending_fee"}
+                            name={"due"}
                             value={setting?.due}
                             label={"Due"}
                         />
