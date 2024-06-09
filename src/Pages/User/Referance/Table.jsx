@@ -231,7 +231,12 @@ const UsersTable = ({ filters, setStatistics }) => {
                                                         color="blue-gray"
                                                         className="font-normal opacity-70"
                                                     >
-                                                        {user?.whatsapp}
+                                                        <a href={`https://wa.me/${user?.whatsapp}`}
+                                                            target='_blank' rel='noreferrer'
+                                                            className='btn-link'
+                                                        >
+                                                            {user?.whatsapp}
+                                                        </a>
                                                         {
                                                             user?.settings?.messageError === "false" && <button onClick={() => {
                                                                 setOpen(true)
