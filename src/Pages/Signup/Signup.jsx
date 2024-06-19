@@ -14,7 +14,7 @@ import Logo from '../../Components/Brand/Logo';
 const Signup = () => {
 
     const [whatsapp, setWhatsApp] = useState('')
-    const [telegram, setTelegram] = useState('')
+    const [telegram, setTelegram] = useState('+8801')
 
     const [values, setValues] = useState({
         firstName: '',
@@ -173,12 +173,6 @@ const Signup = () => {
                                             placeholder={'Whatsapp Number'}
                                             state={whatsapp}
                                             setState={setWhatsApp}
-                                            countrySelected={values.country}
-                                        />
-                                        <PhoneNumberSelector
-                                            placeholder={'Telegram Number'}
-                                            state={telegram}
-                                            setState={setTelegram}
                                             countrySelected={values.country}
                                         />
                                         <Input
