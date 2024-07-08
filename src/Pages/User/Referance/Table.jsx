@@ -224,6 +224,7 @@ const UsersTable = ({ filters, setStatistics }) => {
                                         </td>
                                         <td className={classes}
                                         >
+                                            
                                             <div className="flex items-center gap-3">
                                                 <div className="flex flex-col">
                                                     <Typography

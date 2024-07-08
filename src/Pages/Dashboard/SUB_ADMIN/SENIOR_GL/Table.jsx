@@ -61,7 +61,7 @@ const Table = ({ filters }) => {
     }
     useEffect(() => {
         if (currentUser?.role === "trainer") {
-            TABLE_HEAD = ["Date", "Active Date", "Name", "User id", "Phone", "Whatsapp"];
+            TABLE_HEAD = ["Date", "Active Date", "Name", "User id","Referer", "Phone", "Whatsapp"];
         }
     }, [currentUser?.role])
     if (isLoading) {
@@ -201,6 +201,20 @@ const Table = ({ filters }) => {
                                                         className="font-normal opacity-70"
                                                     >
                                                         {user?.userId}
+                                                    </Typography>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className={classes}
+                                        >
+                                            <div className="flex items-center gap-3 cursor-pointer">
+                                                <div className="flex flex-col">
+                                                    <Typography
+                                                        variant="small"
+                                                        color="blue-gray"
+                                                        className="font-normal opacity-70"
+                                                    >
+                                                        {user?.reference}
                                                     </Typography>
                                                 </div>
                                             </div>
