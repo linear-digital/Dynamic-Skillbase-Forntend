@@ -76,8 +76,9 @@ const Header = ({ setDates, pageName, pn, filters, statistics }) => {
     }, [pageName, filters, pn, user])
     const searchUser = async (e) => {
         if (userId) {
-            const feilds = filters
-            delete feilds["status"]
+            const feilds = { ...filters }
+           feilds && delete feilds["status"]
+
             setDates(prev => ({
                 ...feilds,
                 $or: [
@@ -91,7 +92,7 @@ const Header = ({ setDates, pageName, pn, filters, statistics }) => {
             }))
         }
         else {
-            delete filters["$or"]
+         window.location.reload();
         }
     }
     return (
