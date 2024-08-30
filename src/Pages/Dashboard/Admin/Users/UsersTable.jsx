@@ -24,7 +24,7 @@ const UsersTable = ({ filters, setUsers, setStatistic }) => {
     const { isLoading, data: users, refetch } = useQuery({
         queryKey: ["users", filters, pageNumber],
         queryFn: async () => {
-            const passbook = await api.post(`/users?page=${pageNumber}`, { ...filters, iwant: true });
+            const passbook = await api.post(`/users?page=${pageNumber}`, { ...filters });
             setUsers && setUsers(passbook.data)
             setStatistic && setStatistic({
                 total: passbook.data.count,

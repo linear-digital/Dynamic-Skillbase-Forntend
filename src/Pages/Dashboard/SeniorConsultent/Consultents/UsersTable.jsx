@@ -29,7 +29,9 @@ const UsersTable = ({ filters, consultant, page }) => {
                 return passbook.data
             }
             else {
-                const passbook = await api.post(`/users/gl-user/${consultant.userId}?page=${pageNumber}`);
+                const passbook = await api.post(`/users/gl-user/${consultant.userId}?page=${pageNumber}`,{
+                    status: "active"
+                });
                 return passbook.data
             }
         }

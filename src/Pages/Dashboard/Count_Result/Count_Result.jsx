@@ -19,6 +19,7 @@ const Statistics = ({ role }) => {
     const [result, setResult] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
     const page = new URLSearchParams(location.search).get('page') || 1
+    const [pageNumber, setPageNumber] = React.useState(1)
     useEffect(() => {
         setTergertRole(role)
     }, [role])
@@ -83,7 +84,7 @@ const Statistics = ({ role }) => {
             </div>
             {
                 result &&
-                <Table users={result} />
+                <Table users={result} setPageNumber={setPageNumber}/>
             }
         </div>
     );

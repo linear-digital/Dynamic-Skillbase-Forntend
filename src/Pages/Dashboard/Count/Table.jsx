@@ -10,7 +10,7 @@ import moment from 'moment';
 
 
 
-const Table = ({ users }) => {
+const Table = ({ users, setPageNumber }) => {
     const [TABLE_HEAD, setTABLE_HEAD] = useState(["Data", "User id", "Name", "Phone", "Whatsapp", "Status"]);
     const { user } = useSelector((state) => state.user);
     const location = useLocation();
@@ -28,74 +28,31 @@ const Table = ({ users }) => {
         const updatedQuery = new URLSearchParams({
             page: page,
         })
+        setPageNumber(page)
         navigate(`${location.pathname}?${updatedQuery}`);
     }
     const prev = () => {
         const updatedQuery = new URLSearchParams({
             page: Number(pageNumber) - 1,
         })
+        setPageNumber(Number(pageNumber) - 1)
         navigate(`${location.pathname}?${updatedQuery}`);
     }
     const next = () => {
         const updatedQuery = new URLSearchParams({
             page: (Number(pageNumber) + 1) || 2,
         })
+        setPageNumber(Number(pageNumber) + 1)
         navigate(`${location.pathname}?${updatedQuery}`);
     }
 
     return (
         <React.Fragment>
-            <CardBody className="overflow-scroll px-0">
+            <CardBody className="px-0">
                 <Statistic data={users} />
-                <CardFooter className="lg:flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Button disabled={Number(pageNumber) <= 1} onClick={prev} variant="outlined" size="sm">
-                        Previous
-                    </Button>
-                    <div className="flex items-center gap-2 lg:py-0 py-3">
-                        {
-                            pagesList().slice(0, 5).map((page) => (
-                                <IconButton
-                                    key={page}
-                                    variant="filled"
-                                    size="sm"
-                                    className={page === Number(pageNumber) ? "bg-primary" : ""}
-                                    onClick={() => {
-                                        paginate(page)
-                                    }}
-                                >
-                                    {page}
-                                </IconButton>
-                            ))
-                        }
-                        {
-                            pagesList().length > 5 &&
-                            <>
-                                <IconButton
-                                    variant="filled"
-                                    size="sm"
-                                >
-                                    ...
-                                </IconButton>
-                                <IconButton
-                                    className={pagesList().length >= Number(pageNumber) ? "bg-primary" : ""}
-                                    variant="filled"
-                                    size="sm"
-                                    onClick={() => {
-                                        paginate(pagesList().length)
-                                    }}
-                                >
-                                    {pagesList().slice(-1)[0]}
-                                </IconButton>
-                            </>
-                        }
-                    </div>
-                    <Button disabled={pageNumber === pagesList().length.toString()} onClick={next} variant="outlined" size="sm">
-                        Next
-                    </Button>
-                </CardFooter>
 
 
-                <table className="w-full min-w-max table-auto text-left">
+                {/* <table className="w-full min-w-max table-auto text-left">
                     <thead>
                         <tr>
                             {TABLE_HEAD.map((head) => (
@@ -201,7 +158,7 @@ const Table = ({ users }) => {
                             },
                         )}
                     </tbody>
-                </table>
+                </table> */}
             </CardBody>
         </React.Fragment>
 

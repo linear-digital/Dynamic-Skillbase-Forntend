@@ -9,6 +9,7 @@ import HeaderCon from '../../Consultent/HeaderCOn';
 const Users = () => {
     const location = useLocation().search;
     const [dates, setDates] = useState({
+        iwant: true
     });
     const [statistic, setStatistic] = useState(null);
     const { user } = useSelector((state) => state.user);
@@ -25,7 +26,7 @@ const Users = () => {
             setDates((prev) => ({ ...prev, role: "user" }))
         }
         else if (user?.role === "gl") {
-            setDates((prev) => ({ ...prev, "settings.gl": user?.userId, status: "active" , dw: true}))
+            setDates((prev) => ({ ...prev, "settings.gl": user?.userId, status: "active", iwant: false, }))
         }
         else if (user?.role === "manager") {
             setDates((prev) => ({ ...prev, role: "user", startDate: new Date(date.getFullYear(), date.getMonth(), date.getDate()) }))
@@ -37,13 +38,13 @@ const Users = () => {
     return (
         <div className='p-5'>
             {
-                (user?.role === "admin" || user?.role === "gl" || user?.role === "sgl" || user?.role === "manager") && <Header dates={dates} setDates={setDates} statistics={statistic} filters={dates}/>
+                (user?.role === "admin" || user?.role === "gl" || user?.role === "sgl" || user?.role === "manager") && <Header dates={dates} setDates={setDates} statistics={statistic} filters={dates} />
             }
             {
                 user?.role === "consultant" &&
                 <HeaderCon data={users} setDates={setDates} />
             }
-            <UsersTable filters={dates} setUsers={setUsers} setStatistic={setStatistic}/>
+            <UsersTable filters={dates} setUsers={setUsers} setStatistic={setStatistic} />
         </div>
     );
 };
