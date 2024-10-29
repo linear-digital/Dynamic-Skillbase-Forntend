@@ -21,11 +21,11 @@ export function Faq() {
                 </p>
                 <Accordion open={open === 1}>
                     <AccordionHeader onClick={() => handleOpen(1)}>
-                        What is Dynamic Skillbase platform?
+                        What is Visteche platform?
                     </AccordionHeader>
                     <AccordionBody>
                         <p className="text-base">
-                            Dynamic Skillbase Platform is a platform where you will be able to enhance your performance through learning As you show your talents on Facebook, Youtbube,Instagram and tiktok etc like that you could able to show your talents in Dynamic Skillbase E-learning Platform as it is a digital marketing platform where you can learn. Besides learning you will be able to improve your work ability or performance.
+                            Visteche Platform is a platform where you will be able to enhance your performance through learning As you show your talents on Facebook, Youtbube,Instagram and tiktok etc like that you could able to show your talents in Visteche E-learning Platform as it is a digital marketing platform where you can learn. Besides learning you will be able to improve your work ability or performance.
                         </p>
                     </AccordionBody>
                 </Accordion>

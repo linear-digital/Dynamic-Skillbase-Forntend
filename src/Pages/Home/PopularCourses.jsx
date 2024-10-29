@@ -21,7 +21,7 @@ const PopularCourses = () => {
             <h5 className='lg:text-xl text-lg text-primary leading-normal text-center  font-semibold mt-3'>POPULAR COURSES</h5>
             <h1 className='lg:text-3xl text-2xl text-center font-semibold'>Choose Our Best Courses</h1>
             <p className='text-sm text-center mt-3'>
-            So, I encourage you to take the first step towards unlocking your potential today. Explore our course catalog, <br /> choose the courses that resonate with you, and embark on a journey of growth, discovery, and success with Dynamic SkillBase.
+            So, I encourage you to take the first step towards unlocking your potential today. Explore our course catalog, <br /> choose the courses that resonate with you, and embark on a journey of growth, discovery, and success with Visteche.
             </p>
             <div className="flex flex-wrap justify-center gap-10 mt-10">
                 {

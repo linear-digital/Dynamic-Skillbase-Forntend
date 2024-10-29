@@ -13,7 +13,7 @@ export const sendWhatsappMessage = (phone, message) => {
     const messageToSend = encodeURIComponent(`
     আসসালামু আলাইকুম*
 
-DYNAMIC SKILLBASE E-LEARNING POINTএ আপনাকে স্বাগতম 🖥
+Visteche E-LEARNING POINTএ আপনাকে স্বাগতম 🖥
 
 Name:- ${message.name}
 Student ID:- ${message.userId}

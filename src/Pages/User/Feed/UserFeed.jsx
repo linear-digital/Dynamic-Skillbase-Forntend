@@ -40,7 +40,7 @@ const UserFeed = () => {
     }
     return (
         <div className='lg:p-10 p-5'>
-            <h1 className='text-3xl text-center font-semibold'>WELCOME TO Dynamic Skillbase</h1>
+            <h1 className='text-3xl text-center font-semibold'>WELCOME TO Visteche</h1>
             <Notice />
             {
                 user.status === "active" && <>
@@ -63,7 +63,7 @@ const UserFeed = () => {
 
                             <CardSingleButton
                                 className="row-span-1 "
-                                title={"Dynamic Skillbase Support Meeting"}
+                                title={"Visteche Support Meeting"}
                                 button={"Get Meeting Link"}
                                 link={settings.support_link}
                             />

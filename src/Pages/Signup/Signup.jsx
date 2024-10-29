@@ -83,7 +83,7 @@ const Signup = () => {
             >
                 <BlankDialog open={open} setOpen={setOpen} size={"sm"}>
                     <div className='py-5 text-black px-5'>
-                        <h1 className='text-2xl font-semibold text-green-600 text-center'>Welcome to Dynamic Skillbase</h1>
+                        <h1 className='text-2xl font-semibold text-green-600 text-center'>Welcome to Visteche</h1>
                         <h1 className='text-xl mt-3'>Your Account Information</h1>
                         <div className="mt-5">
                             <h2>Name: {user?.firstName + " " + user?.lastName}</h2>

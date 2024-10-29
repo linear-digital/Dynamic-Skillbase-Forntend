@@ -7,7 +7,7 @@ const Logo = ({ width, link }) => {
         <Link to={link ? link : "/"} title='Click To Go Home Page'>
             <img src={'/images/logo/logo.png'}
                 className={`${width || "w-[120px]"}  h-auto`}
-                alt="Dynamic Skillbase" />
+                alt="Visteche" />
         </Link>
     );
 };
@@ -19,7 +19,7 @@ export const LogoSm = ({ width, link }) => {
         <Link to={link ? link : "/"} title='Click To Go Home Page'>
             <img src={'/images/logo/logo.png'}
                 className={`${width || "w-[70px]"}  h-auto`}
-                alt="Dynamic Skillbase" />
+                alt="Visteche" />
         </Link>
     );
 };

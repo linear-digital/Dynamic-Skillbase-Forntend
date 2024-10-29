@@ -13,7 +13,7 @@ const Footer = () => {
                   <Logo />
                 </a>
                 <p className="mb-7 text-base text-body-color dark:text-dark-6">
-                  "Dynamic SkillBase: Empowering Growth. Versatile courses for personal and professional development. Learn essential skills for success in a fast-paced world. Start your journey today!"
+                  "Visteche: Empowering Growth. Versatile courses for personal and professional development. Learn essential skills for success in a fast-paced world. Start your journey today!"
                 </p>
                 <p className="flex items-center text-sm font-medium text-dark dark:text-white">
                   <span className="mr-3 text-primary">
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
 
             <LinkGroup header="Company">
-              <NavLink link="/#" label="About Dynamic Skillbase" />
+              <NavLink link="/#" label="About Visteche" />
               <NavLink link="/#" label="Contact & Support" />
               <NavLink link="/#" label="Success History" />
               <NavLink link="/privacy-policy" label="Privacy & Policy" />
@@ -124,7 +124,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  &copy; {new Date().getFullYear()} Dynamic Skillbase
+                  &copy; {new Date().getFullYear()} Visteche
                 </p>
               </div>
             </div>

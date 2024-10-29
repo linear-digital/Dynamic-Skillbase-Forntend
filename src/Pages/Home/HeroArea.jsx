@@ -14,10 +14,10 @@ const HeroArea = () => {
                     <h1 className="lg:text-5xl text-2xl   font-semibold mt-5 text-black"
                         style={{ lineHeight: '1.2' }}
                     >
-                        Better Learning Feature Starts With Dynamic Skillbase
+                        Better Learning Feature Starts With Visteche
                     </h1>
                     <p className="lg:py-6 py-4 lg:w-[80%] w-full text-xs lg:text-sm leading-normal text-blue-gray-700">
-                    At its core, Dynamic Skillbase harnesses the power of adaptive learning technology to tailor educational experiences to each individual user. Whether you're a student, a professional seeking to upskill, or an entrepreneur looking to expand your knowledge base, Dynamic Skillbase is your personalized pathway to success.
+                    At its core, Visteche harnesses the power of adaptive learning technology to tailor educational experiences to each individual user. Whether you're a student, a professional seeking to upskill, or an entrepreneur looking to expand your knowledge base, Visteche is your personalized pathway to success.
                     </p>
                     <div className="flex gap-5">
                         <Link to={'/courses'} className="btn btn-primary px-6">

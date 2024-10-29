@@ -13,6 +13,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function NavList({ onClick }) {
     const { user } = useSelector((state) => state.user);
+
     return (
         <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
             <Typography
@@ -134,7 +135,7 @@ export function TopNavbar() {
                     className="mr-4 cursor-pointer py-1.5"
                 >
                     <Link to={'/'}>
-                        <Logo width={'max-h-[50px]'} />
+                        <Logo width={'max-h-[70px]'} />
                     </Link>
                 </Typography>
                 <div className="hidden lg:block">
@@ -153,9 +154,9 @@ export function TopNavbar() {
                     )}
                 </IconButton>
             </div>
-            <Collapse open={openNav} className="text-white">
-                <NavList onClick={() => setOpenNav(false)}/>
-            </Collapse>
+            {
+                openNav && <NavList onClick={() => setOpenNav(false)} />
+            }
         </Navbar>
     );
 }

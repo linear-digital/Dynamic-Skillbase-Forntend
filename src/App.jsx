@@ -9,13 +9,15 @@ import { Toaster } from 'react-hot-toast'
 
 const queryClient = new QueryClient()
 function App() {
-  return <Provider store={store}>
-    <QueryClientProvider client={queryClient}>
-      <Toaster />
-      <DefaultFetch />
-      <Outlet />
-    </QueryClientProvider>
-  </Provider>
+  return <div>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <Toaster />
+        <DefaultFetch />
+        <Outlet />
+      </QueryClientProvider>
+    </Provider>
+  </div>
 }
 
 export default App

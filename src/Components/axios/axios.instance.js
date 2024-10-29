@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import axios from "axios";
-export const baseUrl = "https://server.dynamicskillbase.com/api/";
+export const baseUrl = "https://server.visteche-learning.com/api/";
 // export const baseUrl = "http://localhost:4001/api/";
 export const api = axios.create({
   baseURL: baseUrl,
