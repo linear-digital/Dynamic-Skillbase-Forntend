@@ -155,7 +155,9 @@ export function TopNavbar() {
                 </IconButton>
             </div>
             {
-                openNav && <NavList onClick={() => setOpenNav(false)} />
+                openNav && <div className="block lg:hidden">
+                    <NavList onClick={() => setOpenNav(false)} />
+                </div>
             }
         </Navbar>
     );
