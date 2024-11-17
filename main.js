@@ -3,7 +3,7 @@ import path from "path";
 import https from "https";
 import fs from "fs";
 const app = express();
-const PORT = process.env.PORT || 3300;
+const PORT = process.env.PORT || 3000;
 
 // Get the directory name using import.meta.url
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
